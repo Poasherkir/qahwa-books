@@ -165,6 +165,8 @@ def main():
     parser.add_argument("--author-en", default="", help="اسم المؤلف بالإنجليزية")
     parser.add_argument("--redo", action="store_true",
                         help="أعد ترتيب الملفات المُسماة مسبقاً (لتصحيح سنوات خاطئة)")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="معاينة فقط بدون إعادة تسمية")
     args = parser.parse_args()
 
     folder = args.dir
@@ -199,18 +201,24 @@ def main():
         time.sleep(0.3)
 
     # Rename
-    print(f"\nإعادة تسمية {len(found)} ملف ...")
-    for year, filename in sorted(found):
-        old_path = os.path.join(folder, filename)
-        base = re.sub(r"^\d{4}\s*-\s*", "", filename)
-        new_filename = f"{year} - {base}"
-        new_path = os.path.join(folder, new_filename)
-        if os.path.exists(old_path):
-            if old_path != new_path:
-                if os.path.exists(new_path):
-                    os.remove(new_path)
-                os.rename(old_path, new_path)
-            print(f"  {new_filename}")
+    if args.dry_run:
+        print(f"\n(معاينة فقط — لم يتم إعادة التسمية)")
+        for year, filename in sorted(found):
+            base = re.sub(r"^\d{4}\s*-\s*", "", filename)
+            print(f"  {year} - {base}")
+    else:
+        print(f"\nإعادة تسمية {len(found)} ملف ...")
+        for year, filename in sorted(found):
+            old_path = os.path.join(folder, filename)
+            base = re.sub(r"^\d{4}\s*-\s*", "", filename)
+            new_filename = f"{year} - {base}"
+            new_path = os.path.join(folder, new_filename)
+            if os.path.exists(old_path):
+                if old_path != new_path:
+                    if os.path.exists(new_path):
+                        os.remove(new_path)
+                    os.rename(old_path, new_path)
+                print(f"  {new_filename}")
 
     print(f"\nاكتمل!  تم ترتيبه: {len(found)}  |  لم يُعثر: {len(not_found)}")
     if not_found:
