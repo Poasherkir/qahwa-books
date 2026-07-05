@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar" class="" data-skin="light">
+<head><meta charset="UTF-8" /><script type="5dded5602e2c0d386544116c-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="5dded5602e2c0d386544116c-text/javascript">class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<title>أفضل 100 رواية رومانسية &#8211; قهوة 8 غرب | قهوتك بطعم الكتب</title><style id="rocket-critical-css">:root{--brand-color:#0669ff;--dark-brand-color:#0051cc;--bright-color:#FFF;--base-color:#2c2f34}html{-ms-touch-action:manipulation;touch-action:manipulation;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}aside,header,nav{display:block}a{background-color:transparent}img{border-style:none}button,input{font:inherit}button,input{overflow:visible}button,input{margin:0}button{text-transform:none}button,[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}button:-moz-focusring,input:-moz-focusring{outline:1px dotted ButtonText}*{padding:0;margin:0;list-style:none;border:0;outline:none;box-sizing:border-box}*:before,*:after{box-sizing:border-box}body{background:#F7F7F7;color:var(--base-color);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue","Open Sans",Arial,sans-serif;font-size:13px;line-height:21px}h1,h2,.the-subtitle{line-height:1.4;font-weight:600}h1{font-size:41px;font-weight:700}h2{font-size:27px}.the-subtitle{font-size:17px}a{color:var(--base-color);text-decoration:none}img{max-width:100%;height:auto}p{line-height:1.7}.screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}.stream-item{text-align:center;position:relative;z-index:2;margin:20px 0;padding:0}.stream-item.stream-item-above-header{margin:0}.tie-icon:before,[class^="tie-icon-"],[class*=" tie-icon-"]{font-family:'tiefonticon'!important;speak:never;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}body.tie-no-js a.remove,body.tie-no-js .menu-sub-content{display:none!important}body.tie-no-js .tie-icon:before,body.tie-no-js [class^="tie-icon-"],body.tie-no-js [class*=" tie-icon-"]{visibility:hidden!important}body.tie-no-js [class^="tie-icon-"]:before,body.tie-no-js [class*=" tie-icon-"]:before{content:"\f105"}.tie-popup,#autocomplete-suggestions{display:none}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.container:after{content:"";display:table;clear:both}@media (min-width:768px){.container{width:100%}}@media (min-width:1200px){.container{max-width:1200px}}.tie-row{margin-left:-15px;margin-right:-15px}.tie-row:after{content:"";display:table;clear:both}.tie-col-md-4,.tie-col-md-8,.tie-col-xs-12{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.tie-col-xs-12{float:left}.tie-col-xs-12{width:100%}@media (min-width:992px){.tie-col-md-4,.tie-col-md-8{float:left}.tie-col-md-4{width:33.33333%}.tie-col-md-8{width:66.66667%}}.clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden}.clearfix:after{clear:both}.tie-container,#tie-wrapper{height:100%;min-height:650px}.tie-container{position:relative;overflow:hidden}#tie-wrapper{background:#fff;position:relative;z-index:108;height:100%;margin:0 auto}.container-wrapper{background:#ffffff;border:1px solid rgba(0,0,0,0.1);border-radius:2px;padding:30px}#content{margin-top:30px}@media (max-width:991px){#content{margin-top:15px}}.site-content{-ms-word-wrap:break-word;word-wrap:break-word}.boxed-layout #tie-wrapper{max-width:1230px}.boxed-layout.wrapper-has-shadow #tie-wrapper{box-shadow:0 1px 7px rgba(171,171,171,0.5)}@media (min-width:992px){.boxed-layout #tie-wrapper{width:95%}}.theme-header{background:#fff;position:relative;z-index:999}.theme-header:after{content:"";display:table;clear:both}.theme-header.has-shadow{box-shadow:rgba(0,0,0,0.1) 0px 25px 20px -20px}#menu-components-wrap{display:flex;justify-content:space-between;width:100%;flex-wrap:wrap}.header-layout-4 #menu-components-wrap{justify-content:flex-start}.header-layout-4 #menu-components-wrap .main-menu-wrap{flex-grow:2}.header-layout-4 #menu-components-wrap .flex-placeholder{flex-grow:1}#logo{margin-top:40px;margin-bottom:40px;display:block;float:left}#logo img{vertical-align:middle}#logo a{display:inline-block}@media (max-width:991px){#theme-header.has-normal-width-logo #logo{margin:14px 0!important;text-align:left;line-height:1}#theme-header.has-normal-width-logo #logo img{width:auto;height:auto;max-width:190px}}@media (max-width:479px){#theme-header.has-normal-width-logo #logo img{max-width:160px;max-height:60px!important}}@media (max-width:991px){#theme-header.mobile-header-centered.header-layout-1 .header-layout-1-logo{width:auto!important}#theme-header.mobile-header-centered #logo{float:none;text-align:center}}.components{display:flex;align-items:center;justify-content:end}.components>li{position:relative}.components>li.social-icons-item{margin:0}.components>li>a{display:block;position:relative;width:30px;text-align:center;font-size:16px;white-space:nowrap}.header-layout-1 #menu-components-wrap{display:flex;justify-content:flex-end}.header-layout-1 .main-menu-wrapper{display:table;width:100%}.header-layout-1 #logo{line-height:1;float:left;margin-top:20px;margin-bottom:20px}.header-layout-1 .header-layout-1-logo{display:table-cell;vertical-align:middle;float:none}@media (max-width:991px){.header-layout-1 .main-menu-wrapper{border-width:0;display:flex;flex-flow:row nowrap;align-items:center;justify-content:space-between}}.mobile-header-components{display:none;z-index:10;height:30px;line-height:30px;flex-wrap:nowrap;flex:1 1 0%}.mobile-header-components .components{float:none;display:flex!important;justify-content:flex-start}.mobile-header-components .components li.custom-menu-link{display:inline-block;float:none}.mobile-header-components .components li.custom-menu-link>a{width:20px;padding-bottom:15px}.mobile-header-components [class^="tie-icon-"]{font-size:18px;width:20px;height:20px;vertical-align:middle}.mobile-header-components .tie-mobile-menu-icon{font-size:20px}.mobile-header-components .nav-icon{display:inline-block;width:20px;height:2px;background-color:var(--base-color);position:relative;top:-4px}.mobile-header-components .nav-icon:before,.mobile-header-components .nav-icon:after{position:absolute;right:0;background-color:var(--base-color);content:'';display:block;width:100%;height:100%;transform:translateZ(0);backface-visibility:hidden}.mobile-header-components .nav-icon:before{transform:translateY(-7px)}.mobile-header-components .nav-icon:after{transform:translateY(7px)}.mobile-header-components .menu-text-wrapper{white-space:nowrap;width:auto!important}.mobile-header-components .menu-text{color:var(--base-color);line-height:30px;font-size:12px;padding:0 0 0 5px;display:inline-block}#mobile-header-components-area_1 .components li.custom-menu-link>a{margin-right:15px}#mobile-header-components-area_2 .components{flex-direction:row-reverse}#mobile-header-components-area_2 .components li.custom-menu-link>a{margin-left:15px}@media (max-width:991px){#tie-body #mobile-container,.mobile-header-components{display:block}}@media (max-width:991px){.theme-header .components{display:none}}.main-nav-wrapper{position:relative;z-index:4}.main-nav{background-color:var(--main-nav-background);color:var(--main-nav-primary-color);position:relative;border:1px solid var(--main-nav-main-border-color);border-width:1px 0}.main-menu-wrapper{position:relative}@media (min-width:992px){.header-menu .menu{display:flex}.header-menu .menu a{display:block;position:relative}.header-menu .menu>li>a{white-space:nowrap}.header-menu .menu .sub-menu a{padding:8px 10px}.header-menu .menu ul:not(.sub-menu-columns):not(.sub-menu-columns-item):not(.sub-list):not(.mega-cat-sub-categories):not(.slider-arrow-nav){box-shadow:0 2px 5px rgba(0,0,0,0.1)}.header-menu .menu ul li{position:relative}.header-menu .menu ul a{border-width:0 0 1px}#main-nav{z-index:9;line-height:60px}.main-menu .menu>li>a{padding:0 14px;font-size:14px;font-weight:700}.main-menu .menu>li>.menu-sub-content{border-top:2px solid var(--main-nav-primary-color)}.main-menu .menu ul{line-height:20px;z-index:1}.main-menu .menu-sub-content{background:var(--main-nav-background);display:none;padding:15px;width:230px;position:absolute;box-shadow:0 3px 4px rgba(0,0,0,0.2)}.main-menu .menu-sub-content a{width:200px}nav.main-nav.menu-style-default .menu>li.tie-current-menu{border-bottom:5px solid var(--main-nav-primary-color);margin-bottom:-5px}nav.main-nav.menu-style-default .menu>li.tie-current-menu>a:after{content:"";width:20px;height:2px;position:absolute;margin-top:17px;left:50%;top:50%;bottom:auto;right:auto;transform:translateX(-50%) translateY(-50%);background:#2c2f34}nav.main-nav.menu-style-solid-bg .menu>li.tie-current-menu>a{background-color:var(--main-nav-primary-color);color:var(--main-nav-contrast-primary-color)}.main-nav .menu a,.main-nav .components li a{color:var(--main-nav-text-color)}.main-nav-light{--main-nav-background:#FFFFFF;--main-nav-secondry-background:rgba(0,0,0,0.03);--main-nav-primary-color:var(--brand-color);--main-nav-contrast-primary-color:var(--bright-color);--main-nav-text-color:var(--base-color);--main-nav-secondry-text-color:rgba(0,0,0,0.5);--main-nav-main-border-color:rgba(0,0,0,0.1);--main-nav-secondry-border-color:rgba(0,0,0,0.08)}}@media (min-width:992px){header .menu-item-has-children>a:before{content:'';position:absolute;right:10px;top:50%;bottom:auto;transform:translateY(-50%);font-family:'tiefonticon'!important;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;content:"\f079";font-size:11px;line-height:1}.menu>.menu-item-has-children:not(.is-icon-only)>a{padding-right:25px}}.header-layout-1.has-shadow:not(.top-nav-below) .main-nav{border-bottom:0}#theme-header.header-layout-1>div:only-child nav{border-width:0!important}@media only screen and (min-width:992px) and (max-width:1100px){.main-nav .menu>li:not(.is-icon-only)>a{padding-left:7px;padding-right:7px}.main-nav .menu>li:not(.is-icon-only)>a:before{display:none}}@media (max-width:991px){#sticky-logo{display:none}}#main-nav:not(.fixed-nav) #sticky-logo,#main-nav:not(.fixed-nav) .flex-placeholder{display:none}@media (min-width:992px){#sticky-logo{overflow:hidden;float:left;vertical-align:middle}#sticky-logo a{line-height:1;display:inline-block}#sticky-logo img{position:relative;vertical-align:middle;padding:8px 10px;top:-1px;max-height:50px}.header-layout-1 #sticky-logo img{padding:0}.header-layout-1:not(.has-custom-sticky-logo) #sticky-logo{display:none}.theme-header #sticky-logo img{opacity:0;visibility:hidden;width:0!important;transform:translateY(75%)}.header-layout-1 .flex-placeholder{flex-grow:1}}@media (max-width:991px){#tie-wrapper header#theme-header{box-shadow:none;background:transparent!important}.header-layout-1 .main-nav{border-width:0;box-shadow:0 3px 7px 0 rgba(0,0,0,0.1)}.header-layout-1 .main-nav{background-color:#ffffff}.header-layout-1 #menu-components-wrap{display:none}.main-menu-wrapper .main-menu-wrap{width:100%}}@media (max-width:767px){.magazine1:not(.has-builder):not(.error404) .main-content,.magazine1:not(.has-builder):not(.error404) .sidebar{padding-left:0;padding-right:0}}input{border:1px solid rgba(0,0,0,0.1);color:var(--base-color);font-size:13px;outline:none;padding:10px 12px;line-height:23px;border-radius:2px;max-width:100%;background-color:transparent}input:not([type="checkbox"]):not([type="radio"]){appearance:none;outline:none}@media (max-width:767px){input:not([type="submit"]){font-size:16px!important}}[type="submit"]{width:auto;position:relative;background-color:var(--tie-buttons-color, var(--brand-color));color:var(--tie-buttons-text, var(--bright-color));border-radius:var(--tie-buttons-radius, 2px);border:var(--tie-buttons-border-width, 0) solid var(--tie-buttons-border-color, var(--brand-color));padding:10px 25px;margin:0;font-weight:600;font-size:14px;display:inline-block;text-align:center;line-height:21px;text-decoration:none;vertical-align:middle;appearance:none}@media (min-width:992px){.sidebar-left .main-content{float:right;padding-left:5px}.sidebar-left .sidebar{float:left}.sidebar-left.magazine1 .main-content{padding-left:3px}}.post-thumb{position:relative;height:100%;display:block;backface-visibility:hidden;transform:rotate(0)}.post-thumb img{width:100%;display:block}.post-meta{margin:10px 0 8px;font-size:12px;overflow:hidden}.post-meta{color:#666}.post-meta .meta-item{margin-right:8px;display:inline-block}.post-meta .meta-item.tie-icon:before{padding-right:3px}.post-meta .meta-item.date:before{content:"\f017"}@media (max-width:767px){.main-content .post-meta>span{float:left}}#breadcrumb{margin:50px 0 0}#breadcrumb,#breadcrumb a:not(:hover){color:#666}#breadcrumb .delimiter{margin:0 3px;font-style:normal}.entry-header-outer #breadcrumb{margin:0 0 20px;padding:0}.social-icons-item{float:right;margin-left:6px;position:relative}.social-icons-item .social-link span{color:var(--base-color);line-height:unset}.social-icons-widget .social-icons-item .social-link{width:24px;height:24px;line-height:24px;padding:0;display:block;text-align:center;border-radius:2px}.main-nav .components>li.social-icons-item .social-link:not(:hover) span{color:var(--main-nav-text-color)}.social-icons-item .facebook-social-icon{background-color:#4080FF!important}.social-icons-item .facebook-social-icon span{color:#4080FF}ul:not(.solid-social-icons) .social-icons-item a:not(:hover){background-color:transparent!important}.solid-social-icons .social-link{background-color:var(--base-color)}.dark-skin .solid-social-icons .social-link{background-color:#27292d;border-color:#27292d}.solid-social-icons .social-link span{color:#ffffff!important}@media (max-width:767px){.container-wrapper{padding:20px 15px}}.mag-box-container{position:relative}.mag-box .posts-items li:nth-child(1){margin-top:0}.mag-box{margin-bottom:30px;clear:both}@media (max-width:991px){.mag-box{margin-bottom:15px}}.mag-box .posts-items{clear:both;margin:0 -2%}.mag-box .posts-items li{float:left;width:50%;margin-top:24px;padding:0 2%}@media (max-width:670px){.mag-box .posts-items li{width:100%}.mag-box .posts-items li:not(:first-child){margin-top:14px}}.mag-box .post-title{font-size:20px;line-height:1.4}.mag-box .post-meta{margin:0 0 3px}.mag-box .post-excerpt{margin-top:10px;color:#666;word-break:break-word;font-size:14px}.mag-box li:not(:first-child) .post-thumb{float:left;margin-right:15px}.mag-box li:not(:first-child) .post-details{padding-left:125px}.mag-box li:not(:first-child) .post-title{font-size:16px}.archive:not(.bbpress) .entry-header-outer{border-radius:2px;border-bottom-right-radius:0;border-bottom-left-radius:0}.archive:not(.bbpress) .entry-header-outer #breadcrumb{margin-bottom:20px;padding:0}.archive:not(.bbpress) .main-content>div:last-child{margin-bottom:0}.archive:not(.bbpress) .mag-box .container-wrapper{border-top-width:0;border-radius:2px;border-top-left-radius:0;border-top-right-radius:0}.archive:not(.bbpress) .mag-box{margin-bottom:0}.archive .wide-post-box .container-wrapper{padding-top:40px}.block-head-4 .has-block-head-4{position:relative;opacity:0.99;display:inline-block!important;width:auto;font-size:15px;line-height:1.3;font-weight:500;margin-bottom:20px;padding:5px 10px;color:var(--bright-color)}.block-head-4 .has-block-head-4:before{content:'';position:absolute;left:0;top:0;width:100%;height:100%;background-color:var(--brand-color);z-index:-1}.block-head-4 .widget-title{padding:0 10px}.block-head-4 .widget-title .the-subtitle{line-height:27px}.block-head-4#tie-body .widget-title{color:#ffffff}.block-head-4#tie-body .widget-title:before{background:#111}.block-head-4 span.widget-title-icon{float:left;margin-right:10px;line-height:27px;position:static;color:#ffffff}.block-head-4 .mag-box>.container-wrapper,.block-head-4 .widget-title{opacity:0.99}.block-head-6 .has-block-head-4:after{content:'';position:absolute;right:0;top:0;width:70%;height:100%;background-color:var(--brand-color);transform:skew(-40deg) translateX(14px);z-index:-1}.block-head-6#tie-body .widget-title:after{background:#111}.wide-post-box .posts-items{margin:0}.wide-post-box .posts-items li{width:100%;padding:0;display:flex!important}.wide-post-box .posts-items li .post-title{font-size:20px}.wide-post-box .posts-items li .post-thumb{margin-right:25px;float:none;flex:0 0 50%;width:50%;max-width:420px}@media (max-width:767px){.wide-post-box .posts-items li .post-thumb{flex:1 0 40%;width:40%;max-width:40%;margin-right:3.55%}}.wide-post-box .posts-items li .post-details{flex:1 1 auto;padding:0!important}@media (max-width:580px){.wide-post-box .posts-items li{flex-direction:column}.wide-post-box .posts-items li .post-thumb{width:100%;flex:1 0 100%;max-width:100%;margin:0 0 10px 0}.wide-post-box .posts-items li .post-meta{width:100%}}.small-wide-post-box .posts-items li .post-thumb{flex:0 0 30%}.side-aside{position:fixed;top:0;z-index:111;visibility:hidden;width:350px;max-width:100%;height:100%;background:#FFFFFF;background-repeat:no-repeat;background-position:center top;background-size:cover;overflow-y:auto}@media (min-width:992px){.side-aside{right:0;transform:translate(350px,0)}.side-aside:not(.slide-sidebar-desktop){display:none}}.dark-skin{--lazyload-loading-color:#161717}.dark-skin{background-color:var(--tie-dark-skin-bg-main, #1f2024);color:#ffffff}.dark-skin a:not(:hover){color:#ffffff}.sidebar .container-wrapper{margin-bottom:30px}@media (max-width:991px){.sidebar .container-wrapper{margin-bottom:15px}}body:not(.has-builder) .sidebar .container-wrapper:last-child{margin-bottom:0}@media (max-width:991px){.has-sidebar .sidebar{margin-top:15px}}.widget-title{position:relative}.widget-title .the-subtitle{font-size:15px;min-height:15px}.widget-title-icon{position:absolute;right:0;top:1px;color:#b9bec3;font-size:15px}.widget-title-icon:before{content:"\f08d"}.widget li{padding:6px 0}.widget li:first-child{padding-top:0}.widget li:after{clear:both;display:table;content:""}.widget_nav_menu li{padding:5px 0 5px 12px;font-size:105%}.widget_nav_menu li a:before{content:"\f106";font-family:'tiefonticon';color:#2c2f34;font-size:13px;display:inline-block;line-height:18px;width:12px;margin-left:-12px;text-align:left}.widget_nav_menu .widget-title-icon:before{content:"\f0c9"}.social-icons-widget .social-icons-item{float:left;margin:3px;padding:0}.social-icons-widget .social-icons-item .social-link{width:40px;height:40px;line-height:40px;font-size:18px}@media (max-width:479px){.social-icons-widget .social-icons-item{float:none;display:inline-block}}#mobile-container{display:none;padding:10px 30px 30px}#mobile-menu{margin-bottom:20px;position:relative;padding-top:15px}#mobile-menu .menu>li{border-bottom:1px solid rgba(0,0,0,0.05)}.dark-skin #mobile-menu .menu>li{border-color:rgba(255,255,255,0.05)}#mobile-menu .menu>li li{padding-left:15px}#mobile-menu li{display:block;position:relative}#mobile-menu li a{display:block;padding:15px 50px 15px 0;font-size:16px;line-height:22px;font-weight:600}.dark-skin #mobile-menu li a{color:#ffffff}#mobile-menu li.menu-item-has-children>a:before{display:none}#mobile-menu li .menu-sub-content,#mobile-menu li ul{opacity:1!important;background-image:none!important;padding:0!important;min-height:unset!important}#mobile-menu li ul{padding-left:15px;display:none}#mobile-menu li ul a{font-weight:normal;font-size:14px;padding-top:10px;padding-bottom:10px}#mobile-social-icons{margin-bottom:15px}#mobile-social-icons ul{text-align:center;overflow:hidden}#mobile-social-icons ul .social-icons-item{float:none;display:inline-block}#mobile-social-icons .social-icons-item{margin:0}#mobile-social-icons .social-icons-item .social-link{background:transparent;border:none}#tie-wrapper:after{position:absolute;z-index:1000;top:-10%;left:-50%;width:0;height:0;background:rgba(0,0,0,0.2);content:"";opacity:0}@media (max-width:991px){.side-aside.appear-from-left{left:0;transform:translate(-100%,0)}.side-aside.is-fullwidth{width:100%}}.is-desktop .side-aside .has-custom-scroll{padding:50px 0 0}.side-aside:after{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.2);content:"";opacity:1}a.remove{position:absolute;top:0;right:0;display:block;speak:never;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;width:20px;height:20px;display:block;line-height:20px;text-align:center;font-size:15px}a.remove:before{content:"\e117";font-family:"tiefonticon";color:#e74c3c}a.remove.big-btn{width:25px;height:25px;line-height:25px;font-size:22px}a.remove.light-btn:not(:hover):before{color:#ffffff}.side-aside a.remove{z-index:1;top:15px;left:50%;right:auto;transform:translateX(-50%)}.side-aside a.remove:not(:hover):before{color:#111}.side-aside.dark-skin a.remove:not(:hover):before{color:#ffffff}.tie-popup a.remove{transform:scale(0.2);opacity:0;top:15px;right:15px;z-index:1}.theiaStickySidebar:after{content:"";display:table;clear:both}.has-custom-scroll,.side-aside{overflow-x:hidden;scrollbar-width:thin}.has-custom-scroll::-webkit-scrollbar,.side-aside::-webkit-scrollbar{width:5px}.has-custom-scroll::-webkit-scrollbar-track,.side-aside::-webkit-scrollbar-track{background:transparent}.has-custom-scroll::-webkit-scrollbar-thumb,.side-aside::-webkit-scrollbar-thumb{border-radius:20px;background:rgba(0,0,0,0.2)}.dark-skin .has-custom-scroll::-webkit-scrollbar-thumb{background:rgb(0,0,0)}.tie-popup{position:fixed;z-index:99999;left:0;top:0;height:100%;width:100%;background-color:rgba(0,0,0,0.5);display:none;perspective:600px}.pop-up-live-search{will-change:transform,opacity;transform:scale(0.7);opacity:0}.tie-popup-search-wrap::-webkit-input-placeholder{color:#ffffff}.tie-popup-search-wrap::-moz-placeholder{color:#ffffff}.tie-popup-search-wrap:-moz-placeholder{color:#ffffff}.tie-popup-search-wrap:-ms-input-placeholder{color:#ffffff}.tie-popup-search-wrap form{position:relative;height:80px;margin-bottom:20px}.popup-search-wrap-inner{position:relative;padding:80px 15px 0;margin:0 auto;max-width:800px}input.tie-popup-search-input{width:100%;height:80px;line-height:80px;background:rgba(0,0,0,0.7)!important;font-weight:500;font-size:22px;border:0;padding-right:80px;padding-left:30px;color:#ffffff;border-radius:5px}button.tie-popup-search-submit{font-size:28px;color:#666;position:absolute;right:5px;top:15px;background:transparent!important}#tie-popup-search-mobile .popup-search-wrap-inner{padding-top:50px}#tie-popup-search-mobile input.tie-popup-search-input{height:50px;line-height:1;padding-left:20px;padding-right:50px}#tie-popup-search-mobile button.tie-popup-search-submit{font-size:16px;top:9px;right:0}#autocomplete-suggestions{overflow:auto;padding:20px;color:#eee;position:absolute;display:none;width:370px;z-index:9999;margin-top:15px}@font-face{font-family:"tiefonticon";src:url(https://8ghrb.com/wp-content/themes/jannah/assets/fonts/tielabs-fonticon/tielabs-fonticon.woff2?ciufdj1) format("woff2"),url(https://8ghrb.com/wp-content/themes/jannah/assets/fonts/tielabs-fonticon/tielabs-fonticon.woff?ciufdj1) format("woff"),url(https://8ghrb.com/wp-content/themes/jannah/assets/fonts/tielabs-fonticon/tielabs-fonticon.ttf?ciufdj1) format("truetype"),url(https://8ghrb.com/wp-content/themes/jannah/assets/fonts/tielabs-fonticon/tielabs-fonticon.svg?ciufdj1#tielabs-fonticon) format("svg");font-weight:normal;font-style:normal;font-display:swap}.tie-icon-facebook:before{content:"\f09a"}.tie-icon-search:before{content:"\f002"}.tie-icon-home:before{content:"\f015"}html{direction:rtl}.tie-col-xs-12{float:right}@media (min-width:992px){.tie-col-md-4,.tie-col-md-8{float:right}}.post-meta .meta-item{margin-left:8px;margin-right:0}.mag-box .post-meta .meta-item{white-space:nowrap}.post-meta .tie-icon:before{padding-left:3px;padding-right:0!important}@media (max-width:767px){.main-content .post-meta>span{float:right}}.tie-popup-search-wrap input[type="text"]{padding-right:20px;padding-left:80px}button.tie-popup-search-submit{left:5px;right:auto}a.remove{left:0;right:auto}.tie-popup a.remove{left:15px;right:auto}#tie-popup-search-mobile button.tie-popup-search-submit{right:auto;left:0}#tie-popup-search-mobile input.tie-popup-search-input{padding-right:20px;padding-left:50px}#logo,.header-layout-1 #logo{float:right}.header-layout-1 .main-menu{float:left}.header-layout-4 #menu-components-wrap{padding-right:20px;padding-left:0}.header-layout-4 .main-menu{float:right}@media (min-width:992px){header .menu-item-has-children>a:before{left:12px;right:auto}#theme-header .menu>li.menu-item-has-children:not(.is-icon-only)>a{padding-left:25px;padding-right:15px}.main-menu,.header-menu .menu li,#sticky-logo{float:right}.components,.components>li{float:left}}@media (max-width:991px){#theme-header.has-normal-width-logo #logo{text-align:right}.mobile-header-components{left:15px;right:auto}.header-layout-1 .mobile-header-components{left:0;right:auto}#mobile-menu .menu>li li{padding-left:0;padding-right:15px}#mobile-menu li a{padding:15px 0 15px 50px}}#mobile-header-components-area_1 .components{flex-direction:row-reverse}#mobile-header-components-area_2 .components{flex-direction:row}.mobile-header-components .menu-text{padding-left:0;padding-right:5px}@media (max-width:991px){.header-layout-1 .main-menu-wrapper{flex-direction:row-reverse}}.mag-box .posts-items li{float:right}.mag-box li:not(:first-child) .post-thumb{float:right;margin-left:15px;margin-right:0}.mag-box li:not(:first-child) .post-details{padding-right:125px;padding-left:0}.wide-post-box .posts-items li .post-thumb{margin-left:25px;margin-right:0}.block-head-4 .has-block-head-4:before{right:0;left:auto}.block-head-4 span.widget-title-icon{float:right;margin-left:10px;margin-right:0}.block-head-6 .has-block-head-4:after{left:0;right:auto;transform:skew(40deg) translateX(-14px)}.widget-title-icon{left:0;right:auto}.widget_nav_menu li{padding:5px 12px 5px 0}.widget_nav_menu li a:before{content:'\f104';text-align:right;margin-right:-12px;margin-left:0}.social-icons-widget .social-icons-item{float:right}</style><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="5dded5602e2c0d386544116c-|49"></script><link rel="preload" href="https://8ghrb.com/wp-content/cache/min/1/eaab20d6da522924947f3a9caf8696cd.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='preload' as='script' href='https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'>
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//maps.gstatic.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+<link rel='dns-prefetch' href='//google-analytics.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//ssl.google-analytics.com' />
+<link rel='dns-prefetch' href='//youtube.com' />
+<link rel='dns-prefetch' href='//api.pinterest.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//pixel.wp.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//syndication.twitter.com' />
+<link rel='dns-prefetch' href='//platform.instagram.com' />
+<link rel='dns-prefetch' href='//disqus.com' />
+<link rel='dns-prefetch' href='//sitename.disqus.com' />
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//platform.linkedin.com' />
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+
+<link rel="alternate" type="application/rss+xml" title="قهوة 8 غرب | قهوتك بطعم الكتب &laquo; الخلاصة" href="https://8ghrb.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="قهوة 8 غرب | قهوتك بطعم الكتب &laquo; خلاصة التعليقات" href="https://8ghrb.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="قهوة 8 غرب | قهوتك بطعم الكتب &laquo; أفضل 100 رواية رومانسية خلاصة التصنيف" href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/feed/" />
+
+		<style type="text/css">
+			:root{				
+			--tie-preset-gradient-1: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--tie-preset-gradient-2: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--tie-preset-gradient-3: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--tie-preset-gradient-4: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--tie-preset-gradient-5: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--tie-preset-gradient-6: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--tie-preset-gradient-7: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--tie-preset-gradient-8: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--tie-preset-gradient-9: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--tie-preset-gradient-10: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--tie-preset-gradient-11: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--tie-preset-gradient-12: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--tie-preset-gradient-13: linear-gradient(135deg, #4D34FA, #ad34fa);
+			--tie-preset-gradient-14: linear-gradient(135deg, #0057FF, #31B5FF);
+			--tie-preset-gradient-15: linear-gradient(135deg, #FF007A, #FF81BD);
+			--tie-preset-gradient-16: linear-gradient(135deg, #14111E, #4B4462);
+			--tie-preset-gradient-17: linear-gradient(135deg, #F32758, #FFC581);
+
+			
+					--main-nav-background: #FFFFFF;
+					--main-nav-secondry-background: rgba(0,0,0,0.03);
+					--main-nav-primary-color: #0088ff;
+					--main-nav-contrast-primary-color: #FFFFFF;
+					--main-nav-text-color: #2c2f34;
+					--main-nav-secondry-text-color: rgba(0,0,0,0.5);
+					--main-nav-main-border-color: rgba(0,0,0,0.1);
+					--main-nav-secondry-border-color: rgba(0,0,0,0.08);
+				
+			}
+		</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" /><style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--global-color: #0088ff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+
+
+
+<style id='tie-css-ilightbox-inline-css' type='text/css'>
+.wf-active .logo-text,.wf-active h1,.wf-active h2,.wf-active h3,.wf-active h4,.wf-active h5,.wf-active h6,.wf-active .the-subtitle{font-family: 'Changa';}.wf-active #main-nav .main-menu > ul > li > a{font-family: 'Questrial';}html #tie-wrapper .mag-box.big-post-left-box li:not(:first-child) .post-title,html #tie-wrapper .mag-box.big-post-top-box li:not(:first-child) .post-title,html #tie-wrapper .mag-box.half-box li:not(:first-child) .post-title,html #tie-wrapper .mag-box.big-thumb-left-box li:not(:first-child) .post-title,html #tie-wrapper .mag-box.scrolling-box .slide .post-title,html #tie-wrapper .mag-box.miscellaneous-box li:not(:first-child) .post-title{font-weight: 500;}#tie-body{background-color: #eeeeee;}html #header-notification-bar{background: var( --tie-preset-gradient-13 );}html #header-notification-bar{--tie-buttons-color: #FFFFFF;--tie-buttons-border-color: #FFFFFF;--tie-buttons-hover-color: #e1e1e1;--tie-buttons-hover-text: #000000;}html #header-notification-bar{--tie-buttons-text: #000000;}html #the-post .entry-content a:not(.shortc-button){color: #0086fc !important;}html #tie-container #tie-wrapper,html .post-layout-8 #content{background-color: #f5f5f5;}html .tie-cat-35522,html .tie-cat-item-35522 > span{background-color:#e67e22 !important;color:#FFFFFF !important;}html .tie-cat-35522:after{border-top-color:#e67e22 !important;}html .tie-cat-35522:hover{background-color:#c86004 !important;}html .tie-cat-35522:hover:after{border-top-color:#c86004 !important;}html .tie-cat-35523,html .tie-cat-item-35523 > span{background-color:#2ecc71 !important;color:#FFFFFF !important;}html .tie-cat-35523:after{border-top-color:#2ecc71 !important;}html .tie-cat-35523:hover{background-color:#10ae53 !important;}html .tie-cat-35523:hover:after{border-top-color:#10ae53 !important;}html .tie-cat-35524,html .tie-cat-item-35524 > span{background-color:#9b59b6 !important;color:#FFFFFF !important;}html .tie-cat-35524:after{border-top-color:#9b59b6 !important;}html .tie-cat-35524:hover{background-color:#7d3b98 !important;}html .tie-cat-35524:hover:after{border-top-color:#7d3b98 !important;}html .tie-cat-35525,html .tie-cat-item-35525 > span{background-color:#34495e !important;color:#FFFFFF !important;}html .tie-cat-35525:after{border-top-color:#34495e !important;}html .tie-cat-35525:hover{background-color:#162b40 !important;}html .tie-cat-35525:hover:after{border-top-color:#162b40 !important;}html .tie-cat-35526,html .tie-cat-item-35526 > span{background-color:#795548 !important;color:#FFFFFF !important;}html .tie-cat-35526:after{border-top-color:#795548 !important;}html .tie-cat-35526:hover{background-color:#5b372a !important;}html .tie-cat-35526:hover:after{border-top-color:#5b372a !important;}html .tie-cat-35527,html .tie-cat-item-35527 > span{background-color:#4CAF50 !important;color:#FFFFFF !important;}html .tie-cat-35527:after{border-top-color:#4CAF50 !important;}html .tie-cat-35527:hover{background-color:#2e9132 !important;}html .tie-cat-35527:hover:after{border-top-color:#2e9132 !important;}@media (min-width: 1200px){html .container{width: auto;}}html .boxed-layout #tie-wrapper,html .boxed-layout .fixed-nav{max-width: 1270px;}@media (min-width: 1240px){html .container,html .wide-next-prev-slider-wrapper .slider-main-container{max-width: 1240px;}}@media (min-width: 992px){html .sidebar{width: 28%;}html .main-content{width: 72%;}}html body .mag-box .breaking,html body .social-icons-widget .social-icons-item .social-link,html body .widget_product_tag_cloud a,html body .widget_tag_cloud a,html body .post-tags a,html body .widget_layered_nav_filters a,html body .post-bottom-meta-title,html body .post-bottom-meta a,html body .post-cat,html body .show-more-button,html body #instagram-link.is-expanded .follow-button,html body .cat-counter a + span,html body .mag-box-options .slider-arrow-nav a,html body .main-menu .cats-horizontal li a,html body #instagram-link.is-compact,html body .pages-numbers a,html body .pages-nav-item,html body .bp-pagination-links .page-numbers,html body .fullwidth-area .widget_tag_cloud .tagcloud a,html body ul.breaking-news-nav li.jnt-prev,html body ul.breaking-news-nav li.jnt-next,html body #tie-popup-search-mobile table.gsc-search-box{border-radius: 35px;}html body .mag-box ul.breaking-news-nav li{border: 0 !important;}html body #instagram-link.is-compact{padding-right: 40px;padding-left: 40px;}html body .post-bottom-meta-title,html body .post-bottom-meta a,html body .more-link{padding-right: 15px;padding-left: 15px;}html body #masonry-grid .container-wrapper .post-thumb img{border-radius: 0px;}html body .video-thumbnail,html body .review-item,html body .review-summary,html body .user-rate-wrap,html body textarea,html body input,html body select{border-radius: 5px;}html body .post-content-slideshow,html body #tie-read-next,html body .prev-next-post-nav .post-thumb,html body .post-thumb img,html body .container-wrapper,html body .tie-popup-container .container-wrapper,html body .widget,html body .tie-grid-slider .grid-item,html body .slider-vertical-navigation .slide,html body .boxed-slider:not(.tie-grid-slider) .slide,html body .buddypress-wrap .activity-list .load-more a,html body .buddypress-wrap .activity-list .load-newest a,html body .woocommerce .products .product .product-img img,html body .woocommerce .products .product .product-img,html body .woocommerce .woocommerce-tabs,html body .woocommerce div.product .related.products,html body .woocommerce div.product .up-sells.products,html body .woocommerce .cart_totals,html .woocommerce .cross-sells,html body .big-thumb-left-box-inner,html body .miscellaneous-box .posts-items li:first-child,html body .single-big-img,html body .masonry-with-spaces .container-wrapper .slide,html body .news-gallery-items li .post-thumb,html body .scroll-2-box .slide,html .magazine1.archive:not(.bbpress) .entry-header-outer,html .magazine1.search .entry-header-outer,html .magazine1.archive:not(.bbpress) .mag-box .container-wrapper,html .magazine1.search .mag-box .container-wrapper,html body.magazine1 .entry-header-outer + .mag-box,html body .digital-rating-static,html body .entry q,html body .entry blockquote,html body #instagram-link.is-expanded,html body.single-post .featured-area,html body.post-layout-8 #content,html body .footer-boxed-widget-area,html body .tie-video-main-slider,html body .post-thumb-overlay,html body .widget_media_image img,html body .stream-item-mag img,html body .media-page-layout .post-element{border-radius: 15px;}html #subcategories-section .container-wrapper{border-radius: 15px !important;margin-top: 15px !important;border-top-width: 1px !important;}@media (max-width: 767px) {html .tie-video-main-slider iframe{border-top-right-radius: 15px;border-top-left-radius: 15px;}}html .magazine1.archive:not(.bbpress) .mag-box .container-wrapper,html .magazine1.search .mag-box .container-wrapper{margin-top: 15px;border-top-width: 1px;}html body .section-wrapper:not(.container-full) .wide-slider-wrapper .slider-main-container,html body .section-wrapper:not(.container-full) .wide-slider-three-slids-wrapper{border-radius: 15px;overflow: hidden;}html body .wide-slider-nav-wrapper,html body .share-buttons-bottom,html body .first-post-gradient li:first-child .post-thumb:after,html body .scroll-2-box .post-thumb:after{border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;}html body .main-menu .menu-sub-content,html body .comp-sub-menu{border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;}html body.single-post .featured-area{overflow: hidden;}html body #check-also-box.check-also-left{border-top-right-radius: 15px;border-bottom-right-radius: 15px;}html body #check-also-box.check-also-right{border-top-left-radius: 15px;border-bottom-left-radius: 15px;}html body .mag-box .breaking-news-nav li:last-child{border-top-right-radius: 35px;border-bottom-right-radius: 35px;}html body .mag-box .breaking-title:before{border-top-right-radius: 35px;border-bottom-right-radius: 35px;}html body .tabs li:last-child a,html body .full-overlay-title li:not(.no-post-thumb) .block-title-overlay{border-top-left-radius: 15px;}html body .center-overlay-title li:not(.no-post-thumb) .block-title-overlay,html body .tabs li:first-child a{border-top-right-radius: 15px;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="https://8ghrb.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://8ghrb.com/wp-json/wp/v2/categories/21141" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://8ghrb.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.5" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="icon" href="https://8ghrb.com/wp-content/uploads/2020/10/cropped-logo100-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://8ghrb.com/wp-content/uploads/2020/10/cropped-logo100-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://8ghrb.com/wp-content/uploads/2020/10/cropped-logo100-180x180.png" />
+<meta name="msapplication-TileImage" content="https://8ghrb.com/wp-content/uploads/2020/10/cropped-logo100-270x270.png" />
+<script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script></head>
+
+<body id="tie-body" class="rtl archive category category--100-- category-21141 wp-theme-jannah tie-no-js boxed-layout wrapper-has-shadow block-head-4 block-head-6 magazine3 magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-4 has-header-ad sidebar-left has-sidebar">
+
+
+
+<div class="background-overlay">
+
+	<div id="tie-container" class="site tie-container">
+
+		
+		<div id="tie-wrapper">
+			<div class="stream-item stream-item-above-header"><div class="stream-item-size" style=""><script type="rocketlazyloadscript">(function(s){s.dataset.zone='7115408',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script></div></div>
+<header id="theme-header" class="theme-header header-layout-4 header-layout-1 main-nav-light main-nav-default-light main-nav-below has-stream-item has-shadow has-normal-width-logo mobile-header-centered">
+	
+<div class="main-nav-wrapper">
+	<nav id="main-nav" data-skin="search-in-main-nav" class="main-nav header-nav live-search-parent menu-style-default menu-style-solid-bg" style="line-height:62px" aria-label="القائمة الرئيسية">
+		<div class="container">
+
+			<div class="main-menu-wrapper">
+
+				<div id="mobile-header-components-area_1" class="mobile-header-components"><ul class="components"><li class="mobile-component_menu custom-menu-link"><a href="#" id="mobile-menu-icon" class="menu-text-wrapper"><span class="tie-mobile-menu-icon nav-icon is-layout-1"></span><span class="menu-text">القائمة</span></a></li></ul></div>
+						<div class="header-layout-1-logo" style="width:50px">
+							
+		<div id="logo" class="image-logo" style="margin-top: 6px; margin-bottom: 6px;">
+
+			
+			<a title="قهوة 8 غرب | قهوتك بطعم الكتب" href="https://8ghrb.com/">
+				
+				<picture class="tie-logo-default tie-logo-picture">
+					
+					<source class="tie-logo-source-default tie-logo-source" srcset="https://8ghrb.com/wp-content/uploads/2020/10/logo100.png">
+					<img class="tie-logo-img-default tie-logo-img" src="https://8ghrb.com/wp-content/uploads/2020/10/logo100.png" alt="قهوة 8 غرب | قهوتك بطعم الكتب" width="50" height="50" style="max-height:50px !important; width: auto;" />
+				</picture>
+						</a>
+
+			
+		</div><!-- #logo /-->
+
+								</div>
+
+						<div id="mobile-header-components-area_2" class="mobile-header-components"><ul class="components"><li class="mobile-component_search custom-menu-link">
+				<a href="#" class="tie-search-trigger-mobile">
+					<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">ابحث عن كتاب</span>
+				</a>
+			</li></ul></div>
+				<div id="menu-components-wrap">
+
+					
+		<div id="sticky-logo" class="image-logo">
+
+			
+			<a title="قهوة 8 غرب | قهوتك بطعم الكتب" href="https://8ghrb.com/">
+				
+				<picture class="tie-logo-default tie-logo-picture">
+					<source class="tie-logo-source-default tie-logo-source" srcset="https://8ghrb.com/wp-content/uploads/2020/10/logo100.png">
+					<img class="tie-logo-img-default tie-logo-img" src="https://8ghrb.com/wp-content/uploads/2020/10/logo100.png" alt="قهوة 8 غرب | قهوتك بطعم الكتب"  />
+				</picture>
+						</a>
+
+			
+		</div><!-- #Sticky-logo /-->
+
+		<div class="flex-placeholder"></div>
+		
+					<div class="main-menu main-menu-wrap">
+						<div id="main-nav-menu" class="main-menu header-menu"><ul id="menu-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a%d8%a9" class="menu"><li id="menu-item-59834" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-59834"><a href="https://8ghrb.com">الرئيسية</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/">الأدب العربي</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">روايات عربية</a></li>
+	<li id="menu-item-1120" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1120"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%83%d8%aa%d8%a8-%d8%a3%d8%af%d8%a8%d9%8a%d8%a9/">كتب أدبية</a></li>
+	<li id="menu-item-5087" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5087"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%82%d8%b5%d8%b5-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">قصص عربية</a></li>
+	<li id="menu-item-1118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1118"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%a7%d9%84%d8%a3%d8%af%d8%a8-%d8%a7%d9%84%d8%b3%d8%a7%d8%ae%d8%b1/">الأدب الساخر</a></li>
+	<li id="menu-item-1119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1119"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%af%d9%88%d8%a7%d9%88%d9%8a%d9%86-%d8%a7%d9%84%d8%b4%d8%b9%d8%b1-%d9%88%d8%a7%d9%84%d9%81%d9%86%d9%88%d9%86/">دواوين الشعر والفنون</a></li>
+	<li id="menu-item-1121" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1121"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%85%d8%b3%d8%b1%d8%ad%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">مسرحيات عربية</a></li>
+</ul>
+</li>
+<li id="menu-item-1113" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1113"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/">أدب عالمى مترجم</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-1115" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1115"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الروايات العالمية المترجمة</a></li>
+	<li id="menu-item-1116" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1116"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الكتب العالمية المترجمة</a></li>
+	<li id="menu-item-19267" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19267"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%82%d8%b5%d8%b5-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">القصص العالمية المترجمة</a></li>
+	<li id="menu-item-1117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1117"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%85%d8%b1%d8%ad%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">المسرحيات العالمية المترجمة</a></li>
+	<li id="menu-item-19269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19269"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%a3%d8%af%d8%a8%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الكتب الأدبية المترجمة</a></li>
+	<li id="menu-item-1114" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1114"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d8%af%d9%88%d8%a7%d9%88%d9%8a%d9%86-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الدواوين العالمية المترجمة</a></li>
+	<li id="menu-item-47952" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47952"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a-%d8%a7%d9%86%d8%ac%d9%84%d9%8a%d8%b2%d9%8a/">روايات (عربي &#8211; انجليزي)</a></li>
+</ul>
+</li>
+<li id="menu-item-58952" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-58952"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/">علوم الإنسان والحياة</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%af%d9%8a%d9%86%d9%8a%d8%a9/">كتب دينية</a></li>
+	<li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%aa%d9%86%d9%85%d9%8a%d8%a9-%d8%a8%d8%b4%d8%b1%d9%8a%d8%a9/">تنمية بشرية</a></li>
+	<li id="menu-item-13450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13450"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b9%d9%84%d9%85-%d9%86%d9%81%d8%b3-%d9%88%d8%a5%d8%ac%d8%aa%d9%85%d8%a7%d8%b9/">كتب علم النفس والإجتماع</a></li>
+	<li id="menu-item-4002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4002"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%81%d9%84%d8%b3%d9%81%d8%a9-%d9%88%d9%85%d9%86%d8%b7%d9%82/">كتب الفلسفة والمنطق</a></li>
+	<li id="menu-item-19516" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19516"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%81%d9%83%d8%b1-%d9%88%d8%a5%d9%8a%d8%af%d9%8a%d9%88%d9%84%d9%88%d8%ac%d9%8a%d8%a7/">فكر وثقافة وإيديولوجيا</a></li>
+	<li id="menu-item-13693" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13693"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%a5%d8%af%d8%a7%d8%b1%d8%a9-%d8%a3%d8%b9%d9%85%d8%a7%d9%84/">كتب إدارة أعمال</a></li>
+	<li id="menu-item-19505" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19505"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae/">كتب تاريخ</a></li>
+	<li id="menu-item-4134" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4134"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%b3%d9%8a%d8%b1-%d9%88%d8%aa%d8%b1%d8%a7%d8%ac%d9%85-%d9%88%d9%85%d8%b0%d9%83%d8%b1%d8%a7%d8%aa/">كتب السير والتراجم والمذكرات</a></li>
+	<li id="menu-item-4631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4631"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b9%d9%84%d9%85%d9%8a%d8%a9/">كتب علمية</a></li>
+	<li id="menu-item-4630" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4630"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b7%d8%a8%d9%8a%d8%a9/">كتب طبية</a></li>
+</ul>
+</li>
+<li id="menu-item-4003" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4003"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/">تصنيفات أخرى</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-4250" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4250"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%b3%d9%8a%d8%a7%d8%b3%d9%8a%d8%a9/">كتب سياسية</a></li>
+	<li id="menu-item-2184" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2184"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a3%d8%b7%d9%81%d8%a7%d9%84/">كتب أطفال</a></li>
+	<li id="menu-item-14597" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14597"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%a8%d9%84%d8%a7%d8%af-%d9%88%d8%aa%d8%b1%d8%ad%d8%a7%d9%84/">أدب الرحلات والترحال</a></li>
+	<li id="menu-item-19702" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19702"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d9%86%d9%82%d8%af-%d8%a7%d9%84%d8%a3%d8%af%d8%a8%d9%8a/">كتب النقد الأدبي</a></li>
+	<li id="menu-item-29685" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29685"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%b9%d9%84%d9%85-%d8%a7%d9%84%d9%81%d9%84%d9%83-%d9%88%d8%a7%d9%84%d9%83%d9%88%d9%86%d9%8a%d8%a7%d8%aa/">علم الفلك والكونيات</a></li>
+	<li id="menu-item-29872" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29872"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%a5%d9%82%d8%aa%d8%b5%d8%a7%d8%af/">كتب الإقتصاد</a></li>
+	<li id="menu-item-7482" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7482"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%aa%d8%b9%d9%84%d9%8a%d9%85-%d9%84%d8%ba%d8%a7%d8%aa/">كتب تعليم لغات</a></li>
+	<li id="menu-item-19504" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19504"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%ad%d9%8a%d9%88%d8%a7%d9%86/">علوم الحيوان</a></li>
+	<li id="menu-item-4251" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4251"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%ab%d9%82%d8%a7%d9%81%d8%a9-%d8%ac%d9%86%d8%b3%d9%8a%d8%a9/">كتب ثقافة جنسية</a></li>
+	<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d9%85%d9%86%d9%88%d8%b9%d8%a9/">كتب منوعة</a></li>
+	<li id="menu-item-7390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7390"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%82%d8%b1%d9%8a%d8%a8%d8%a7/">قريبا</a></li>
+</ul>
+</li>
+<li id="menu-item-58837" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-58837"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/">سلاسل وأعمال كاملة</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-58838" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58838"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d9%85%d8%a7-%d9%88%d8%b1%d8%a7%d8%a1-%d8%a7%d9%84%d8%b7%d8%a8%d9%8a%d8%b9%d8%a9/">سلسلة ما وراء الطبيعة</a></li>
+	<li id="menu-item-58839" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58839"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d9%86%d8%aa%d8%a7%d8%b2%d9%8a%d8%a7-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة فانتازيا &#8211; أحمد خالد توفيق</a></li>
+	<li id="menu-item-58840" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58840"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d8%a7%d9%81%d8%a7%d8%b1%d9%8a-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة سافاري &#8211; أحمد خالد توفيق</a></li>
+	<li id="menu-item-58841" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58841"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b1%d8%ac%d9%84-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ad%d9%8a%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة رجل المستحيل &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58842" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58842"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%b9%d8%af%d8%a7%d8%af-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة الأعداد الخاصة &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58843" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58843"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%84%d9%81-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة ملف المستقبل &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58844" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58844"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%83%d9%88%d9%83%d8%aa%d9%8a%d9%84-2000-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة كوكتيل 2000 &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58845" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58845"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d8%b1%d8%b3-%d8%a7%d9%84%d8%a3%d9%86%d8%af%d9%84%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة فارس الأندلس &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58846" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58846"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d9%8a%d9%81-%d8%a7%d9%84%d8%b9%d8%af%d8%a7%d9%84%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة سيف العدالة &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-60441" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60441"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ad%d8%b1%d8%a8-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b3%d9%8a%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة حرب الجواسيس &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-58847" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58847"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b2%d9%88%d9%88%d9%85-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة زووم &#8211; نبيل فاروق</a></li>
+	<li id="menu-item-60519" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60519"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%86%d9%88%d8%a7%d8%af%d8%b1-%d8%ac%d8%ad%d8%a7-%d9%84%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84/">سلسلة نوادر جحا للأطفال</a></li>
+	<li id="menu-item-58848" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58848"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b5%d8%b1%d8%ae%d8%a9-%d8%a7%d9%84%d8%b1%d8%b9%d8%a8-%d8%b1-%d9%84-%d8%b4%d8%aa%d8%a7%d9%8a%d9%86/">سلسلة صرخة الرعب &#8211; ر. ل. شتاين</a></li>
+	<li id="menu-item-58849" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58849"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%82%d8%af%d9%85%d8%a7%d8%aa-%d9%82%d8%b5%d9%8a%d8%b1%d8%a9-%d8%ac%d8%af%d9%91%d9%8b%d8%a7/">سلسلة مقدمات قصيرة جدًّا</a></li>
+	<li id="menu-item-58850" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58850"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a3%d9%82%d8%af%d9%85-%d9%84%d9%83/">سلسلة أقدم لك</a></li>
+	<li id="menu-item-63997" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63997"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b9%d9%82%d9%88%d9%84-%d8%b9%d8%b8%d9%8a%d9%85%d8%a9/">سلسلة عقول عظيمة</a></li>
+	<li id="menu-item-58851" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58851"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%af%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%b4%d8%a6%d9%8a%d9%86/">الأدب العالمي للناشئين</a></li>
+	<li id="menu-item-58852" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58852"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85/">روايات تاريخ الإسلام</a></li>
+	<li id="menu-item-61131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61131"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1%d8%a8%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%b5%d9%88%d8%b1%d8%a9-%d8%b7%d8%a7%d8%b1%d9%82-%d8%a7%d9%84%d8%b3/">سلسلة الأئمة الأربعة المصورة &#8211; طارق السويدان</a></li>
+	<li id="menu-item-58853" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58853"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%87%d8%a7%d8%b1%d9%89-%d8%a8%d9%88%d8%aa%d8%b1/">سلسلة هارى بوتر</a></li>
+	<li id="menu-item-58854" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58854"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%b4%d9%81%d9%82-twilight/">سلسلة الشفق (twilight)</a></li>
+	<li id="menu-item-58855" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58855"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d8%ba%d8%a7%d9%85%d8%b1%d8%a7%d8%aa-%d8%b4%d9%8a%d8%b1%d9%84%d9%88%d9%83-%d9%87%d9%88%d9%84%d9%85%d8%b2/">سلسلة مغامرات شيرلوك هولمز</a></li>
+	<li id="menu-item-58856" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58856"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%85%d9%84%d9%83%d8%a9-%d8%a7%d9%84%d8%ae%d9%88%d8%a7%d8%aa%d9%85/">سلسلة سيد الخواتم (The Lord of the Rings)</a></li>
+	<li id="menu-item-58857" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-58857"><a href="https://8ghrb.com/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%ab%d9%82%d8%a7%d9%81%d8%a7%d8%aa-%d8%a7%d9%84%d8%b4%d8%b9%d9%88%d8%a8-72-%d9%83%d8%aa%d8%a7%d8%a8/">سلسلة من ثقافات الشعوب (72 كتاب)</a></li>
+	<li id="menu-item-58858" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58858"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ab%d9%85%d8%b1%d8%a7%d8%aa-%d9%85%d9%86-%d8%af%d9%88%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%81%d8%a9/">سلسلة ثمرات من دوحة المعرفة</a></li>
+	<li id="menu-item-58859" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58859"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%b9%d8%ac%d8%a7%d8%a6%d8%a8-%d8%a7%d9%84%d8%ae%d9%84%d9%82/">سلسلة من عجائب الخلق</a></li>
+	<li id="menu-item-58860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58860"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%86%d8%ac%d9%8a%d8%a8-%d9%85%d8%ad%d9%81%d9%88%d8%b8/">الأعمال الكاملة لنجيب محفوظ</a></li>
+	<li id="menu-item-58861" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58861"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%af%d9%88%d8%b3%d8%aa%d9%88%d9%8a%d9%81%d8%b3%d9%83%d9%8a-18-%d9%85%d8%ac%d9%84%d8%af/">الأعمال الكاملة لدوستويفسكي (18 مجلد)</a></li>
+	<li id="menu-item-58862" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58862"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%81%d8%b1%d8%a7%d9%86%d8%b2-%d9%83%d8%a7%d9%81%d9%83%d8%a7/">الأعمال الكاملة لفرانز كافكا</a></li>
+	<li id="menu-item-58863" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58863"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%a3%d9%86%d8%b7%d9%88%d9%86-%d8%aa%d8%b4%d9%8a%d8%ae%d9%88%d9%81/">الأعمال الكاملة لأنطون تشيخوف</a></li>
+	<li id="menu-item-58864" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58864"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%ba%d8%b3%d8%a7%d9%86-%d9%83%d9%86%d9%81%d8%a7%d9%86%d9%8a/">الأعمال الكاملة لغسان كنفاني</a></li>
+</ul>
+</li>
+<li id="menu-item-19503" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-19503 tie-current-menu"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/">تجميعات 8 غرب</a>
+<ul class="sub-menu menu-sub-content">
+	<li id="menu-item-25000" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-25000"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/">أفضل 100 رواية رومانسية</a></li>
+	<li id="menu-item-27493" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27493"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d8%b9%d8%a8-%d9%88%d8%aa%d8%b4%d9%88%d9%8a%d9%82/">أفضل 100 رواية رعب وتشويق</a></li>
+	<li id="menu-item-14269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14269"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d9%83%d8%aa%d8%a7%d8%a8-%d9%81%d9%89-%d8%a7%d9%84%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae/">أفضل 100 كتاب فى التاريخ</a></li>
+	<li id="menu-item-14074" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14074"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%ad%d8%a7%d8%b5%d9%84%d8%a9-%d8%b9%d9%84%d9%89-%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d9%86%d9%88%d8%a8%d9%84/">الكتب الحاصلة على جائزة نوبل</a></li>
+</ul>
+</li>
+<li id="menu-item-5839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5839"><a href="https://8ghrb.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86/">المؤلفون</a></li>
+<li id="menu-item-20463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20463"><a href="https://8ghrb.com/%d8%ad%d9%82%d9%88%d9%82-%d8%a7%d9%84%d9%85%d9%84%d9%83%d9%8a%d8%a9/">حقوق كتاب</a></li>
+</ul></div>					</div><!-- .main-menu /-->
+
+					<ul class="components"> <li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.facebook.com/8ghaarb"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a></li> 			<li class="search-compact-icon menu-item custom-menu-link">
+				<a href="#" class="tie-search-trigger">
+					<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+					<span class="screen-reader-text">ابحث عن كتاب</span>
+				</a>
+			</li>
+			</ul><!-- Components -->
+				</div><!-- #menu-components-wrap /-->
+			</div><!-- .main-menu-wrapper /-->
+		</div><!-- .container /-->
+
+			</nav><!-- #main-nav /-->
+</div><!-- .main-nav-wrapper /-->
+
+</header>
+
+<div class="stream-item stream-item-top-wrapper"><div class="stream-item-top"><div class="stream-item-size" style=""><!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-KWDNLNGDSW"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KWDNLNGDSW');
+</script></div></div></div><!-- .tie-col /--><div id="content" class="site-content container"><div id="main-content-row" class="tie-row main-content-row">
+	<div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+
+		
+			<header id="category-title-section" class="entry-header-outer container-wrapper archive-title-wrapper">
+				<nav id="breadcrumb"><a href="https://8ghrb.com/"><span class="tie-icon-home" aria-hidden="true"></span> الرئيسية</a><em class="delimiter">/</em><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/">تجميعات 8 غرب</a><em class="delimiter">/</em><span class="current">أفضل 100 رواية رومانسية</span></nav><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","@id":"#Breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"name":"\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629","@id":"https:\/\/8ghrb.com\/"}},{"@type":"ListItem","position":2,"item":{"name":"\u062a\u062c\u0645\u064a\u0639\u0627\u062a 8 \u063a\u0631\u0628","@id":"https:\/\/8ghrb.com\/category\/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa\/"}}]}</script><h1 class="page-title">أفضل 100 رواية رومانسية</h1>			</header><!-- .entry-header-outer /-->
+
+			
+		<div class="mag-box small-wide-post-box wide-post-box top-news-box">
+			<div class="container-wrapper">
+				<div class="mag-box-container clearfix">
+					<ul id="posts-container" data-layout="default" data-settings="{'uncropped_image':'jannah-image-post','category_meta':false,'post_meta':true,'excerpt':'true','excerpt_length':'20','read_more':false,'read_more_text':false,'media_overlay':false,'title_length':0,'is_full':false,'is_category':true}" class="posts-items">
+<li class="post-item  post-23559 post type-post status-publish format-standard has-post-thumbnail category-56 category--100-- category-7 tag-60643 tag-------pdf tag-22707 tag-----pdf---- tag---pdf tag--------pdf tag----pdf---- tie-standard">
+
+	
+			<a aria-label="رواية ذات فقد &#8211; أثير عبد الله النشمي" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b0%d8%a7%d8%aa-%d9%81%d9%82%d8%af-%d8%a3%d8%ab%d9%8a%d8%b1-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%84%d9%87-%d8%a7%d9%84%d9%86%d8%b4%d9%85%d9%8a/" class="post-thumb"><img width="147" height="220" src="https://8ghrb.com/wp-content/uploads/2016/01/22-93.png" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2016/01/22-93.png 400w, https://8ghrb.com/wp-content/uploads/2016/01/22-93-200x300.png 200w" sizes="(max-width: 147px) 100vw, 147px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">12 يناير، 2016</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b0%d8%a7%d8%aa-%d9%81%d9%82%d8%af-%d8%a3%d8%ab%d9%8a%d8%b1-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%84%d9%87-%d8%a7%d9%84%d9%86%d8%b4%d9%85%d9%8a/">رواية ذات فقد &#8211; أثير عبد الله النشمي</a></h2>
+		
+						<p class="post-excerpt">الموتُ يغتصبني كل ليلة، يزورني في اليوم أكثر من مرة، في كُل مرة يقترب فيها الموت مني، أترك جسدي له&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-14101 post type-post status-publish format-standard has-post-thumbnail category--100-- category--100--- category-25 tag------pdf tag-----pdf tag----pdf tag---wuthering-heights--pdf tag-17242 tag-----pdf-- tag---pdf tag-17243 tag----pdf-- tie-standard">
+
+	
+			<a aria-label="رواية مرتفعات وذرنغ &#8211; إميلي برونتي" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d8%b1%d8%aa%d9%81%d8%b9%d8%a7%d8%aa-%d9%88%d8%b0%d8%b1%d9%86%d8%ba-%d8%a5%d9%85%d9%8a%d9%84%d9%8a-%d8%a8%d8%b1%d9%88%d9%86%d8%aa%d9%8a-%d8%ab%d9%84%d8%a7%d8%ab/" class="post-thumb"><img width="149" height="220" src="https://8ghrb.com/wp-content/uploads/2015/12/2229.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/12/2229.jpg 1082w, https://8ghrb.com/wp-content/uploads/2015/12/2229-203x300.jpg 203w, https://8ghrb.com/wp-content/uploads/2015/12/2229-692x1024.jpg 692w" sizes="(max-width: 149px) 100vw, 149px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">16 ديسمبر، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d8%b1%d8%aa%d9%81%d8%b9%d8%a7%d8%aa-%d9%88%d8%b0%d8%b1%d9%86%d8%ba-%d8%a5%d9%85%d9%8a%d9%84%d9%8a-%d8%a8%d8%b1%d9%88%d9%86%d8%aa%d9%8a-%d8%ab%d9%84%d8%a7%d8%ab/">رواية مرتفعات وذرنغ &#8211; إميلي برونتي</a></h2>
+		
+						<p class="post-excerpt">مرتفعات وذرينغ هي الرواية الوحيدة لإميلي برونتي، وهي بلا جدال إحدى روائع الأدب الإنجليزي. وقد عدَّها النقاد من قصص الحب&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9251 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag--100-- tag--100---pdf tag--100--- tag-----pdf tag---100-- tag---100---pdf tag----pdf tag---pdf tag-23209 tie-standard">
+
+	
+			<a aria-label="أفضل 100 رواية رومانسية على الإطلاق" href="https://8ghrb.com/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a5%d8%b7%d9%84%d8%a7%d9%82/" class="post-thumb"><img width="225" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/11825156_865595333487599_8035315575726065558_n.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/11825156_865595333487599_8035315575726065558_n.jpg 960w, https://8ghrb.com/wp-content/uploads/2015/08/11825156_865595333487599_8035315575726065558_n-300x294.jpg 300w" sizes="auto, (max-width: 225px) 100vw, 225px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a5%d8%b7%d9%84%d8%a7%d9%82/">أفضل 100 رواية رومانسية على الإطلاق</a></h2>
+		
+						<p class="post-excerpt">حصريا وعلى موقع قهوة 8 غرب وبس , جمعنالكم أكتر 100 رواية رومانسية تحميلا وطلبا فى موضوع واحد .. اضغط على&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9247 post type-post status-publish format-standard has-post-thumbnail category--100-- category-25 tag-------pdf tag--------pdf tag-10054 tag----pdf tag-10050 tag-10051 tag-9922 tag---pdf tag-10048 tag-10046 tie-standard">
+
+	
+			<a aria-label="رواية أحبك حيا وميتا &#8211; إيڤان تورغينيف" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a3%d8%ad%d8%a8%d9%83-%d8%ad%d9%8a%d8%a7-%d9%88-%d9%85%d9%8a%d8%aa%d8%a7-%d8%a5%d9%8a%da%a4%d8%a7%d9%86-%d8%aa%d9%88%d8%b1%d8%ba%d9%8a%d9%86%d9%8a%d9%81/" class="post-thumb"><img width="411" height="599" src="https://8ghrb.com/wp-content/uploads/2015/08/22-1.gif" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a3%d8%ad%d8%a8%d9%83-%d8%ad%d9%8a%d8%a7-%d9%88-%d9%85%d9%8a%d8%aa%d8%a7-%d8%a5%d9%8a%da%a4%d8%a7%d9%86-%d8%aa%d9%88%d8%b1%d8%ba%d9%8a%d9%86%d9%8a%d9%81/">رواية أحبك حيا وميتا &#8211; إيڤان تورغينيف</a></h2>
+		
+						<p class="post-excerpt">هذه الرواية هي من الروايات الممتعة التي كتبها الروائي الروسي العالمي الكبير &#8221; ايفان تورغينيف &#8221; ( 1818 -1883 م)&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9243 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag-10028 tag---pdf tag----pdf tag-10041 tag--------pdf tag-10035 tag-----pdf tag-10036 tag-10037 tag-10039 tag-10030 tag-10032 tie-standard">
+
+	
+			<a aria-label="رواية بعد الغروب &#8211; محمد عبد الحليم عبد الله" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a8%d8%b9%d8%af-%d8%a7%d9%84%d8%ba%d8%b1%d9%88%d8%a8-%d9%85%d8%ad%d9%85%d8%af-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%ad%d9%84%d9%8a%d9%85-%d8%b9%d8%a8%d8%af-%d8%a7/" class="post-thumb"><img width="158" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2282.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2282.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/08/2282-215x300.jpg 215w" sizes="auto, (max-width: 158px) 100vw, 158px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a8%d8%b9%d8%af-%d8%a7%d9%84%d8%ba%d8%b1%d9%88%d8%a8-%d9%85%d8%ad%d9%85%d8%af-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%ad%d9%84%d9%8a%d9%85-%d8%b9%d8%a8%d8%af-%d8%a7/">رواية بعد الغروب &#8211; محمد عبد الحليم عبد الله</a></h2>
+		
+						<p class="post-excerpt">الرواية تجعلك تحس طوال وقت قرائتها كإنك مسترخيا مأخوذ بمنظر عذب بجانب هدير من الماء .. آه من الحب والفرام&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9238 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 category-63 tag------pdf tag----pdf tag-----pdf tag-10017 tag-------pdf tag-10020 tag-10011 tag---pdf tag-10013 tag-10015 tie-standard">
+
+	
+			<a aria-label="رواية دعاء الكروان &#8211; طه حسين" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%af%d8%b9%d8%a7%d8%a1-%d8%a7%d9%84%d9%83%d8%b1%d9%88%d8%a7%d9%86-%d8%b7%d9%87-%d8%ad%d8%b3%d9%8a%d9%86/" class="post-thumb"><img width="161" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2281.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2281.jpg 300w, https://8ghrb.com/wp-content/uploads/2015/08/2281-220x300.jpg 220w" sizes="auto, (max-width: 161px) 100vw, 161px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%af%d8%b9%d8%a7%d8%a1-%d8%a7%d9%84%d9%83%d8%b1%d9%88%d8%a7%d9%86-%d8%b7%d9%87-%d8%ad%d8%b3%d9%8a%d9%86/">رواية دعاء الكروان &#8211; طه حسين</a></h2>
+		
+						<p class="post-excerpt">حصرياً تحميل رواية دعاء الكروان pdf مجاناً تأليف طه حسين ضمن تصنيف روايات عربية على موقع قهوة 8 غرب تذكر أنك&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9234 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 category-143 tag-9995 tag---pdf tag----pdf tag-76132 tag-------pd tag------pdf tag-10001 tag-----pdf tag-----pdf-- tag-10005 tag-10003 tag-10006 tag-9997 tag----pdf--- tag-9999 tie-standard">
+
+	
+			<a aria-label="رواية انكسار الروح &#8211; محمد المنسي قنديل" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%86%d9%83%d8%b3%d8%a7%d8%b1-%d8%a7%d9%84%d8%b1%d9%88%d8%ad-%d9%85%d8%ad%d9%85%d8%af-%d8%a7%d9%84%d9%85%d9%86%d8%b3%d9%89-%d9%82%d9%86%d8%af%d9%8a%d9%84/" class="post-thumb"><img width="150" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2280.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2280.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/08/2280-205x300.jpg 205w" sizes="auto, (max-width: 150px) 100vw, 150px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%86%d9%83%d8%b3%d8%a7%d8%b1-%d8%a7%d9%84%d8%b1%d9%88%d8%ad-%d9%85%d8%ad%d9%85%d8%af-%d8%a7%d9%84%d9%85%d9%86%d8%b3%d9%89-%d9%82%d9%86%d8%af%d9%8a%d9%84/">رواية انكسار الروح &#8211; محمد المنسي قنديل</a></h2>
+		
+						<p class="post-excerpt">هذه الرواية أنشودة حزينة لكاتب شجيّ، هو واحد من أصحاب أعذب الأساليب العربية وأنصعها، لا قلق في مفرداته ولا مهجور،&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9228 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 category-708 tag----pdf tag-9987 tag-9989 tag-9990 tag-9992 tag------pdf tag---pdf tag-9983 tag-9985 tag-9981 tag--pdf tie-standard">
+
+	
+			<a aria-label="رواية ماجدولين &#8211; مصطفى لطفي المنفلوطي" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d8%a7%d8%ac%d8%af%d9%88%d9%84%d9%8a%d9%86-%d9%85%d8%b5%d8%b7%d9%81%d9%89-%d9%84%d8%b7%d9%81%d9%89-%d8%a7%d9%84%d9%85%d9%86%d9%81%d9%84%d9%88%d8%b7%d9%89/" class="post-thumb"><img width="150" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/56d8dfc5-75e8-4cf6-98c3-24a5ef626b85.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/56d8dfc5-75e8-4cf6-98c3-24a5ef626b85.jpg 800w, https://8ghrb.com/wp-content/uploads/2015/08/56d8dfc5-75e8-4cf6-98c3-24a5ef626b85-205x300.jpg 205w, https://8ghrb.com/wp-content/uploads/2015/08/56d8dfc5-75e8-4cf6-98c3-24a5ef626b85-700x1024.jpg 700w" sizes="auto, (max-width: 150px) 100vw, 150px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d8%a7%d8%ac%d8%af%d9%88%d9%84%d9%8a%d9%86-%d9%85%d8%b5%d8%b7%d9%81%d9%89-%d9%84%d8%b7%d9%81%d9%89-%d8%a7%d9%84%d9%85%d9%86%d9%81%d9%84%d9%88%d8%b7%d9%89/">رواية ماجدولين &#8211; مصطفى لطفي المنفلوطي</a></h2>
+		
+						<p class="post-excerpt">تحميل رواية ماجدولين من تأليف مصطفى لطفى المنفلوطى فقط على موقع قهوة 8 غرب تذكر أنك حملت هذه الرواية من موقع قهوة&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9225 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 category-54 tag-9963 tag---pdf tag----pdf tag------pdf tag-9970 tag-----pdf tag-------pd tag-------pdf tag-9972 tag-9965 tag-9967 tie-standard">
+
+	
+			<a aria-label="رواية بين الأطلال &#8211; يوسف السباعي" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%a3%d8%b7%d9%84%d8%a7%d9%84-%d9%8a%d9%88%d8%b3%d9%81-%d8%a7%d9%84%d8%b3%d8%a8%d8%a7%d8%b9%d9%89/" class="post-thumb"><img width="161" height="161" src="https://8ghrb.com/wp-content/uploads/2015/08/2279.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2279.jpg 161w, https://8ghrb.com/wp-content/uploads/2015/08/2279-150x150.jpg 150w, https://8ghrb.com/wp-content/uploads/2015/08/2279-70x70.jpg 70w" sizes="auto, (max-width: 161px) 100vw, 161px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%a3%d8%b7%d9%84%d8%a7%d9%84-%d9%8a%d9%88%d8%b3%d9%81-%d8%a7%d9%84%d8%b3%d8%a8%d8%a7%d8%b9%d9%89/">رواية بين الأطلال &#8211; يوسف السباعي</a></h2>
+		
+						<p class="post-excerpt">وفق الكاتب الكبير يوسف السباعى فى سرد الأحداث ووفق جدا فى سرد الغموض الذى يلف الرواية بطريقة هادئة مثيرة ومشوقة&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9220 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag------pdf tag---------pdf tag----pdf tag-9953 tag-------pdf tag-9954 tag-9955 tag-9958 tag-9946 tag-----pdf tag---pdf tag-9948 tag-9950 tie-standard">
+
+	
+			<a aria-label="رواية حتى لا تموت الروح &#8211; علاء سعد حسن" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%aa%d9%89-%d9%84%d8%a7-%d8%aa%d9%85%d9%88%d8%aa-%d8%a7%d9%84%d8%b1%d9%88%d8%ad-%d8%b9%d9%84%d8%a7%d8%a1-%d8%b3%d8%b9%d8%af-%d8%ad%d8%b3%d9%86/" class="post-thumb"><img width="151" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2278.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2278.jpg 294w, https://8ghrb.com/wp-content/uploads/2015/08/2278-206x300.jpg 206w" sizes="auto, (max-width: 151px) 100vw, 151px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%aa%d9%89-%d9%84%d8%a7-%d8%aa%d9%85%d9%88%d8%aa-%d8%a7%d9%84%d8%b1%d9%88%d8%ad-%d8%b9%d9%84%d8%a7%d8%a1-%d8%b3%d8%b9%d8%af-%d8%ad%d8%b3%d9%86/">رواية حتى لا تموت الروح &#8211; علاء سعد حسن</a></h2>
+		
+						<p class="post-excerpt">إن رواية &#8220;حتى لا تموت الروح&#8221; قصة تسلبك -من بدايتها- الشعور بالعالم الخارجى وتجذبك بقوة إلى أعماقها، فالرواية عبارة عن&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9211 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag-9907 tag---pdf tag----pdf tag-9920 tag-9913 tag-----pdf tag-9915 tag-9916 tag-9918 tag-9922 tag-9909 tag-9911 tie-standard">
+
+	
+			<a aria-label="رواية الأجنحة المنكسرة &#8211; جبران خليل جبران" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%84%d8%a3%d8%ac%d9%86%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d9%86%d9%83%d8%b3%d8%b1%d8%a9-%d8%ac%d8%a8%d8%b1%d8%a7%d9%86-%d8%ae%d9%84%d9%8a%d9%84-%d8%ac%d8%a8%d8%b1/" class="post-thumb"><img width="154" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2276.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2276.jpg 280w, https://8ghrb.com/wp-content/uploads/2015/08/2276-210x300.jpg 210w" sizes="auto, (max-width: 154px) 100vw, 154px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%84%d8%a3%d8%ac%d9%86%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d9%86%d9%83%d8%b3%d8%b1%d8%a9-%d8%ac%d8%a8%d8%b1%d8%a7%d9%86-%d8%ae%d9%84%d9%8a%d9%84-%d8%ac%d8%a8%d8%b1/">رواية الأجنحة المنكسرة &#8211; جبران خليل جبران</a></h2>
+		
+						<p class="post-excerpt">ان النفس الحزينة المتألمة تجد راحة بانضمامها الى نفس اخرى تماثلها بالشعور وتشاركها بالاحساس مثلما يستأنس الغريب بالغريب في ارض&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9207 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag-9894 tag-------pdf tag-9903 tag------pdf tag--------pdf tag-9896 tag-----pdf tag---pdf tag-9890 tag-9888 tag-9893 tie-standard">
+
+	
+			<a aria-label="رواية زوجي ما زال حبيبي &#8211; سارة درويش" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b2%d9%88%d8%ac%d9%89-%d9%85%d8%a7-%d8%b2%d8%a7%d9%84-%d8%ad%d8%a8%d9%8a%d8%a8%d9%89-%d8%b3%d8%a7%d8%b1%d8%a9-%d8%af%d8%b1%d9%88%d9%8a%d8%b4/" class="post-thumb"><img width="141" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2275.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b2%d9%88%d8%ac%d9%89-%d9%85%d8%a7-%d8%b2%d8%a7%d9%84-%d8%ad%d8%a8%d9%8a%d8%a8%d9%89-%d8%b3%d8%a7%d8%b1%d8%a9-%d8%af%d8%b1%d9%88%d9%8a%d8%b4/">رواية زوجي ما زال حبيبي &#8211; سارة درويش</a></h2>
+		
+						<p class="post-excerpt">تمكنت سارة درويش من اصطحابي معها في رحلة ملؤها النشوة تغلفها البساطة وأنا أمر بين صفحات الكتاب مأخوذ بها وبفكرها&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9203 post type-post status-publish format-standard has-post-thumbnail category--100-- category-25 category-75 tag----pdf tag-9878 tag-------pdf tag-----pdf tag------pdf tag-9881 tag---pdf tag-9874 tag-9875 tag-9871 tie-standard">
+
+	
+			<a aria-label="رواية نهاية حب &#8211; ليو تولستوى" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%86%d9%87%d8%a7%d9%8a%d8%a9-%d8%ad%d8%a8-%d9%84%d9%8a%d9%88-%d8%aa%d9%88%d9%84%d8%b3%d8%aa%d9%88%d9%89/" class="post-thumb"><img width="140" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/22-1.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%86%d9%87%d8%a7%d9%8a%d8%a9-%d8%ad%d8%a8-%d9%84%d9%8a%d9%88-%d8%aa%d9%88%d9%84%d8%b3%d8%aa%d9%88%d9%89/">رواية نهاية حب &#8211; ليو تولستوى</a></h2>
+		
+						<p class="post-excerpt">&#8220;نهاية حب&#8221; من روائع الأدب العالمي للأديب الروسي المعروف &#8220;ليوتو لستوي&#8221; تبدأ أحداث الرواية عندما تصل إلى قرية من قرى&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9199 post type-post status-publish format-standard has-post-thumbnail category--100-- category-2744 category-638 tag------pdf tag----pdf tag-9870 tag-9861 tag-----pdf tag-9863 tag-9864 tag--------p tag---pdf tag-9857 tag-9859 tag-9855 tie-standard">
+
+	
+			<a aria-label="رواية منتهى الحب &#8211; إحسان عبد القدوس" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d9%86%d8%aa%d9%87%d9%89-%d8%a7%d9%84%d8%ad%d8%a8-%d8%a5%d8%ad%d8%b3%d8%a7%d9%86-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%82%d8%af%d9%88%d8%b3/" class="post-thumb"><img width="156" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2273.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%85%d9%86%d8%aa%d9%87%d9%89-%d8%a7%d9%84%d8%ad%d8%a8-%d8%a5%d8%ad%d8%b3%d8%a7%d9%86-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%82%d8%af%d9%88%d8%b3/">رواية منتهى الحب &#8211; إحسان عبد القدوس</a></h2>
+		
+						<p class="post-excerpt">تحميل كتاب منتهى الحب من تأليف إحسان عبد القدوس فقط على موقع قهوة 8 غرب تذكر أنك حملت هذا الكتاب&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9195 post type-post status-publish format-standard has-post-thumbnail category--100-- category-51 tag------pdf tag----pdf tag-----pdf tag---pdf tag-9845 tag-9839 tag-9842 tie-standard">
+
+	
+			<a aria-label="كتاب قيثارة حب &#8211; أوفيد" href="https://8ghrb.com/%d9%83%d8%aa%d8%a7%d8%a8-%d9%82%d9%8a%d8%ab%d8%a7%d8%b1%d8%a9-%d8%ad%d8%a8-%d8%a3%d9%88%d9%81%d9%8a%d8%af/" class="post-thumb"><img width="163" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2272.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2272.jpg 361w, https://8ghrb.com/wp-content/uploads/2015/08/2272-223x300.jpg 223w" sizes="auto, (max-width: 163px) 100vw, 163px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d9%83%d8%aa%d8%a7%d8%a8-%d9%82%d9%8a%d8%ab%d8%a7%d8%b1%d8%a9-%d8%ad%d8%a8-%d8%a3%d9%88%d9%81%d9%8a%d8%af/">كتاب قيثارة حب &#8211; أوفيد</a></h2>
+		
+						<p class="post-excerpt">هذا الكتاب &#8221; قيثارة حب &#8221; يجمع بين عملين لأوفيد &#8221; قصائد حب &#8221; ، &#8221; فن الحب &#8221; وجاء&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9191 post type-post status-publish format-standard has-post-thumbnail category--100-- category-25 tag-------pdf tag----pdf tag-9829 tag------pdf tag-9830 tag-9823 tag---pdf tag-9825 tag-----pdf tag-9827 tie-standard">
+
+	
+			<a aria-label="رواية حذار من الشفقة &#8211; ستيفان زفايج" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%b0%d8%a7%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%b4%d9%81%d9%82%d8%a9-%d8%b3%d8%aa%d9%8a%d9%81%d8%a7%d9%86-%d8%b2%d9%81%d8%a7%d9%8a%d8%ac/" class="post-thumb"><img width="158" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2271.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%b0%d8%a7%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%b4%d9%81%d9%82%d8%a9-%d8%b3%d8%aa%d9%8a%d9%81%d8%a7%d9%86-%d8%b2%d9%81%d8%a7%d9%8a%d8%ac/">رواية حذار من الشفقة &#8211; ستيفان زفايج</a></h2>
+		
+						<p class="post-excerpt">الرواية تتناول موضوعاً دقيقاً حساساً، ابدع أسلوب الكاتب في وصف الحالات النفسية الدقيقة جداً، والعصية على تطويعها بالكتابة، لقد أجاد&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9185 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 category-148 tag-------pdf tag----pdf tag-9814 tag------pdf tag--------pdf tag-9816 tag-----pdf tag-9807 tag---pdf tag-9809 tag-9811 tie-standard">
+
+	
+			<a aria-label="رواية حذار من الحب &#8211; نبيل فاروق" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%b0%d8%a7%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%ad%d8%a8-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/" class="post-thumb"><img width="165" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2270.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%ad%d8%b0%d8%a7%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%ad%d8%a8-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">رواية حذار من الحب &#8211; نبيل فاروق</a></h2>
+		
+						<p class="post-excerpt">حصرياً تحميل رواية حذار من الحب pdf مجاناً تأليف د. نبيل فاروق ضمن تصنيف روايات عربية على موقع قهوة 8 غرب&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9181 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag-----pdf tag-9792 tag------pdf tag-9796 tag-9797 tag-9799 tag---pdf tag-9790 tag-9802 tag-9794 tie-standard">
+
+	
+			<a aria-label="رواية أحببتك يا صغيرتي &#8211; راندا عبد الحميد" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a3%d8%ad%d8%a8%d8%a8%d8%aa%d9%83-%d9%8a%d8%a7-%d8%b5%d8%ba%d9%8a%d8%b1%d8%aa%d9%89-%d8%b1%d8%a7%d9%86%d8%af%d8%a7-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%ad%d9%85%d9%8a/" class="post-thumb"><img width="153" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2269.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a3%d8%ad%d8%a8%d8%a8%d8%aa%d9%83-%d9%8a%d8%a7-%d8%b5%d8%ba%d9%8a%d8%b1%d8%aa%d9%89-%d8%b1%d8%a7%d9%86%d8%af%d8%a7-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%ad%d9%85%d9%8a/">رواية أحببتك يا صغيرتي &#8211; راندا عبد الحميد</a></h2>
+		
+						<p class="post-excerpt">تحميل رواية أحببتك يا صغيرتى من تأليف راندا عبد الحميد فقط على موقع قهوة 8 غرب تذكر أنك حملت هذه&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-9176 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag------pdf tag-----pdf tag----pdf tag-9775 tag-9780 tag---pdf tag-9784 tag-9776 tag--------pdf tag--------pdf- tag-9782 tag-9778 tag-9773 tag-------pdf tie-standard">
+
+	
+			<a aria-label="رواية لا سكاكين في مطابخ هذه المدينة &#8211; خالد خليفة" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%84%d8%a7-%d8%b3%d9%83%d8%a7%d9%83%d9%8a%d9%86-%d9%81%d9%8a-%d9%85%d8%b7%d8%a7%d8%a8%d8%ae-%d9%87%d8%b0%d9%87-%d8%a7%d9%84%d9%85%d8%af%d9%8a%d9%86%d8%a9-%d8%ae/" class="post-thumb"><img width="152" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2268.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2268.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/08/2268-208x300.jpg 208w" sizes="auto, (max-width: 152px) 100vw, 152px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%84%d8%a7-%d8%b3%d9%83%d8%a7%d9%83%d9%8a%d9%86-%d9%81%d9%8a-%d9%85%d8%b7%d8%a7%d8%a8%d8%ae-%d9%87%d8%b0%d9%87-%d8%a7%d9%84%d9%85%d8%af%d9%8a%d9%86%d8%a9-%d8%ae/">رواية لا سكاكين في مطابخ هذه المدينة &#8211; خالد خليفة</a></h2>
+		
+						<p class="post-excerpt">&#8220;لا سكاكين في مطابخ هذه المدينة&#8221; ليست مجرّد رواية بل هي حفر عميق في آليّات الخوف والتفكّك خلال نصف قرن،&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-8993 post type-post status-publish format-standard has-post-thumbnail category--100-- category-8978 category-7 tag------pdf tag-----pdf tag----pdf tag-------pdf tag-9110 tag-----pdf-- tag-9106 tag---pdf tag-9102 tag----pdf-- tag-9105 tag-9100 tie-standard">
+
+	
+			<a aria-label="رواية نقطة النور &#8211; بهاء طاهر" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d9%86%d9%88%d8%b1-%d8%a8%d9%87%d8%a7%d8%a1-%d8%b7%d8%a7%d9%87%d8%b1/" class="post-thumb"><img width="149" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2262.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2262.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/08/2262-203x300.jpg 203w" sizes="auto, (max-width: 149px) 100vw, 149px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">7 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%86%d9%82%d8%b7%d8%a9-%d8%a7%d9%84%d9%86%d9%88%d8%b1-%d8%a8%d9%87%d8%a7%d8%a1-%d8%b7%d8%a7%d9%87%d8%b1/">رواية نقطة النور &#8211; بهاء طاهر</a></h2>
+		
+						<p class="post-excerpt">&#8220;رفع سالم إلى جده عينين ملهوفتين فقال الجد بلهجة قاطعة: &#8211; لا أحد يفسر حلمك غيرك يا سالم أنا أعرف&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-8969 post type-post status-publish format-standard has-post-thumbnail category--100-- category-8978 category-7 tag-8997 tag----pdf tag-----pdf tag------pdf tag-------pdf tag-9003 tag--------pdf tag------pdf-- tag-9006 tag---pdf tag-8999 tag-----pdf-- tag-9001 tie-standard">
+
+	
+			<a aria-label="رواية الحب في المنفى &#8211; بهاء طاهر" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%84%d8%ad%d8%a8-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d9%86%d9%81%d9%89-%d8%a8%d9%87%d8%a7%d8%a1-%d8%b7%d8%a7%d9%87%d8%b1/" class="post-thumb"><img width="161" height="220" src="https://8ghrb.com/wp-content/uploads/2015/08/2257.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/08/2257.jpg 440w, https://8ghrb.com/wp-content/uploads/2015/08/2257-220x300.jpg 220w" sizes="auto, (max-width: 161px) 100vw, 161px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">7 أغسطس، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a7%d9%84%d8%ad%d8%a8-%d9%81%d9%89-%d8%a7%d9%84%d9%85%d9%86%d9%81%d9%89-%d8%a8%d9%87%d8%a7%d8%a1-%d8%b7%d8%a7%d9%87%d8%b1/">رواية الحب في المنفى &#8211; بهاء طاهر</a></h2>
+		
+						<p class="post-excerpt">«رواية كاملة الأوصاف» &#8211; د. علي الراعي &#8211; الأهرام «نموذج جديد للرواية الواقعية» &#8211; د. شكري عياد &#8211; الهلال «رواية&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-8163 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag-5825 tag------pdf tag-----pdf tag---pdf tag-5821 tag--pdf tie-standard">
+
+	
+			<a aria-label="رواية يوتيرن &#8211; كريم هشام" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%8a%d9%88%d8%aa%d9%8a%d8%b1%d9%86-%d9%83%d8%b1%d9%8a%d9%85-%d9%87%d8%b4%d8%a7%d9%85/" class="post-thumb"><img width="220" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/22110.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/22110.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/07/22110-150x150.jpg 150w, https://8ghrb.com/wp-content/uploads/2015/07/22110-300x300.jpg 300w, https://8ghrb.com/wp-content/uploads/2015/07/22110-70x70.jpg 70w" sizes="auto, (max-width: 220px) 100vw, 220px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">30 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%8a%d9%88%d8%aa%d9%8a%d8%b1%d9%86-%d9%83%d8%b1%d9%8a%d9%85-%d9%87%d8%b4%d8%a7%d9%85/">رواية يوتيرن &#8211; كريم هشام</a></h2>
+		
+						<p class="post-excerpt">حدوتة رومانسية واقعية ممكن تحبها وممكن لا بس الأكيد أنها هتلمس جزء جواك تذكر أنك حملت هذا الكتاب من موقع&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-8056 post type-post status-publish format-standard has-post-thumbnail category--100-- category-25 category-1131 tag------pdf tag----pdf tag-----pdf tag-------pdf tag-----pdf-- tag---pdf tag----pdf-- tag-5566 tie-standard">
+
+	
+			<a aria-label="رواية لأنني أحبك &#8211; غيوم ميسو" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%84%d8%a3%d9%86%d9%86%d9%89-%d8%a3%d8%ad%d8%a8%d9%83-%d8%ba%d9%8a%d9%88%d9%85-%d9%85%d9%8a%d8%b3%d9%88/" class="post-thumb"><img width="147" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/2290.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/2290.jpg 400w, https://8ghrb.com/wp-content/uploads/2015/07/2290-200x300.jpg 200w" sizes="auto, (max-width: 147px) 100vw, 147px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">27 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%84%d8%a3%d9%86%d9%86%d9%89-%d8%a3%d8%ad%d8%a8%d9%83-%d8%ba%d9%8a%d9%88%d9%85-%d9%85%d9%8a%d8%b3%d9%88/">رواية لأنني أحبك &#8211; غيوم ميسو</a></h2>
+		
+						<p class="post-excerpt">ليلى طفلة في الخامسة تختفي في مركز تجاري في لوس أنجلس. والوالدان المكسورا تنتهي علاقتهما بالانفصال. خمس سنوات بعد ذلك,&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7874 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag------pdf tag-4913 tag---pdf tag-4910 tag-----pdf tag-------pdf tag-4908 tie-standard">
+
+	
+			<a aria-label="رواية ستعشقني رغم أنفك &#8211; منه القاضي" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b3%d8%aa%d8%b9%d8%b4%d9%82%d9%86%d9%89-%d8%b1%d8%ba%d9%85-%d8%a7%d9%86%d9%81%d9%83-%d9%85%d9%86%d9%87-%d8%a7%d9%84%d9%82%d8%a7%d8%b6%d9%89/" class="post-thumb"><img width="241" height="209" src="https://8ghrb.com/wp-content/uploads/2015/07/download2.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">25 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b3%d8%aa%d8%b9%d8%b4%d9%82%d9%86%d9%89-%d8%b1%d8%ba%d9%85-%d8%a7%d9%86%d9%81%d9%83-%d9%85%d9%86%d9%87-%d8%a7%d9%84%d9%82%d8%a7%d8%b6%d9%89/">رواية ستعشقني رغم أنفك &#8211; منه القاضي</a></h2>
+		
+						<p class="post-excerpt">تحميل رواية ستعشقنى رغم انفك من تأليف منه القاضى فقط على موقع قهوة 8 غرب تذكر أنك حملت هذه الرواية من موقع&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7862 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag------pdf tag--------pdf tag---pdf tag-------pdf tag-----pdf tag-4866 tie-standard">
+
+	
+			<a aria-label="رواية عشقتك من جنوني &#8211; أصل الغرور" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b9%d8%b4%d9%82%d8%aa%d9%83-%d9%85%d9%86-%d8%ac%d9%86%d9%88%d9%86%d9%89-%d8%a3%d8%b5%d9%84-%d8%a7%d9%84%d8%ba%d8%b1%d9%88%d8%b1/" class="post-thumb"><img width="220" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/216.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/216.jpg 403w, https://8ghrb.com/wp-content/uploads/2015/07/216-150x150.jpg 150w, https://8ghrb.com/wp-content/uploads/2015/07/216-300x300.jpg 300w, https://8ghrb.com/wp-content/uploads/2015/07/216-70x70.jpg 70w" sizes="auto, (max-width: 220px) 100vw, 220px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">25 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b9%d8%b4%d9%82%d8%aa%d9%83-%d9%85%d9%86-%d8%ac%d9%86%d9%88%d9%86%d9%89-%d8%a3%d8%b5%d9%84-%d8%a7%d9%84%d8%ba%d8%b1%d9%88%d8%b1/">رواية عشقتك من جنوني &#8211; أصل الغرور</a></h2>
+		
+						<p class="post-excerpt">تحميل رواية عشقتك من جنونى من تأليف أصل الغرور فقط على موقع قهوة 8 غرب تذكر أنك حملت هذه الرواية من&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7502 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag-3751 tag------pdf tag-3758 tag--------pf tag-3756 tag-----pdf tag-3754 tag--------pdf tag---pdf tag-1356 tag-------pdf tag-3760 tag-3749 tag-3747 tag-3757 tag-3753 tie-standard">
+
+	
+			<a aria-label="رواية سوف أحكي عنك &#8211; أحمد مهنى" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b3%d9%88%d9%81-%d8%a3%d8%ad%d9%83%d9%8a-%d8%b9%d9%86%d9%83-%d8%a3%d8%ad%d9%85%d8%af-%d9%85%d9%87%d9%86%d9%89/" class="post-thumb"><img width="147" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/2220.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/2220.jpg 317w, https://8ghrb.com/wp-content/uploads/2015/07/2220-200x300.jpg 200w" sizes="auto, (max-width: 147px) 100vw, 147px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">23 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b3%d9%88%d9%81-%d8%a3%d8%ad%d9%83%d9%8a-%d8%b9%d9%86%d9%83-%d8%a3%d8%ad%d9%85%d8%af-%d9%85%d9%87%d9%86%d9%89/">رواية سوف أحكي عنك &#8211; أحمد مهنى</a></h2>
+		
+						<p class="post-excerpt">هذه ليست حكاية شخص يحاول أن ينقذ حبه وسط كل ما يجري من خراب .. ليست مجرد حكاية رومانسية عادية&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7445 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag----pdf tag-----pdf tag-------pdf tag------pdf tag---pdf tag-7070 tag-7067 tag-7071 tie-standard">
+
+	
+			<a aria-label="رواية قطة مدللة &#8211; إكرام يوسف" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%82%d8%b7%d8%a9-%d9%85%d8%af%d9%84%d9%84%d8%a9-%d8%a5%d9%83%d8%b1%d8%a7%d9%85-%d9%8a%d9%88%d8%b3%d9%81/" class="post-thumb"><img width="169" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/2215.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/2215.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/07/2215-231x300.jpg 231w" sizes="auto, (max-width: 169px) 100vw, 169px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">22 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%82%d8%b7%d8%a9-%d9%85%d8%af%d9%84%d9%84%d8%a9-%d8%a5%d9%83%d8%b1%d8%a7%d9%85-%d9%8a%d9%88%d8%b3%d9%81/">رواية قطة مدللة &#8211; إكرام يوسف</a></h2>
+		
+						<p class="post-excerpt">لن أسمح لك بكبحى فلتحمى نفسك منى لن أحنى ظهرى أبداً لن تَكسِر صوتى أبداً سأظل أموءُ دوماً لاتنسى أنى&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7170 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag--100---pdf tag----pdf tag------pdf tag-7107 tag-----pdf tag-7112 tag---pdf tag-------pdf tag-7103 tag-7101 tie-standard">
+
+	
+			<a aria-label="رواية قطة حطمت أسواري &#8211; شيماء نعمان" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%82%d8%b7%d8%a9-%d8%ad%d8%b7%d9%85%d8%aa-%d8%a3%d8%b3%d9%88%d8%a7%d8%b1%d9%89-%d8%b4%d9%8a%d9%85%d8%a7%d8%a1-%d9%86%d8%b9%d9%85%d8%a7%d9%86/" class="post-thumb"><img width="154" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/10.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">20 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d9%82%d8%b7%d8%a9-%d8%ad%d8%b7%d9%85%d8%aa-%d8%a3%d8%b3%d9%88%d8%a7%d8%b1%d9%89-%d8%b4%d9%8a%d9%85%d8%a7%d8%a1-%d9%86%d8%b9%d9%85%d8%a7%d9%86/">رواية قطة حطمت أسواري &#8211; شيماء نعمان</a></h2>
+		
+						<p class="post-excerpt">هل تستطيع البراءة والصدق ان تقف امام العند والغضب ؟؟!! هل تسطيع سلمى هدم جسور من الكره والحقد بداخل قلب&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7095 post type-post status-publish format-standard has-post-thumbnail category--100-- category-7 tag--pdf tag---pdf tag----pdf tag-3151 tag------pdf tag-3155 tag-3147 tag---pf tag-----pdf tie-standard">
+
+	
+			<a aria-label="رواية إحتواء &#8211; نسمة الجمل" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a5%d8%ad%d8%aa%d9%88%d8%a7%d8%a1-%d9%86%d8%b3%d9%85%d8%a9-%d8%a7%d9%84%d8%ac%d9%85%d9%84/" class="post-thumb"><img width="152" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/53.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/53.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/07/53-207x300.jpg 207w" sizes="auto, (max-width: 152px) 100vw, 152px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">20 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a5%d8%ad%d8%aa%d9%88%d8%a7%d8%a1-%d9%86%d8%b3%d9%85%d8%a9-%d8%a7%d9%84%d8%ac%d9%85%d9%84/">رواية إحتواء &#8211; نسمة الجمل</a></h2>
+		
+						<p class="post-excerpt">كانت توشك على لفظ جملتها المتحشرجة بحلقها ، أريد العودة لهذا الحب المؤلم هذا الوخز داخل قلبى ، أريد الألم&hellip;</p>
+					</div>
+</li>
+
+<li class="post-item  post-7049 post type-post status-publish format-standard has-post-thumbnail category--100-- category-41 category-7 tag-3030 tag--pdf tag-3045 tag---pdf tag-86299 tag------pdf tag----pdf tag-3035 tag----pdf--- tag-3042 tag-----pdf tag-3047 tag-------pdf tag-3039 tag-3040 tag-1356 tag-3032 tag---pdf--- tag-3044 tag-3037 tag-3048 tie-standard">
+
+	
+			<a aria-label="رواية إيماجو &#8211; دعاء عبد الرحمن" href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a5%d9%8a%d9%85%d8%a7%d8%ac%d9%88-%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d8%af%d8%b9%d8%a7%d8%a1-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%b1%d8%ad%d9%85%d9%86/" class="post-thumb"><img width="152" height="220" src="https://8ghrb.com/wp-content/uploads/2015/07/45.jpg" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" alt="" decoding="async" srcset="https://8ghrb.com/wp-content/uploads/2015/07/45.jpg 318w, https://8ghrb.com/wp-content/uploads/2015/07/45-207x300.jpg 207w" sizes="auto, (max-width: 152px) 100vw, 152px" /></a>
+	<div class="post-details">
+
+		<div class="post-meta clearfix"><span class="date meta-item tie-icon">8 يوليو، 2015</span></div><!-- .post-meta -->
+				<h2 class="post-title"><a href="https://8ghrb.com/%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%a5%d9%8a%d9%85%d8%a7%d8%ac%d9%88-%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d8%af%d8%b9%d8%a7%d8%a1-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%b1%d8%ad%d9%85%d9%86/">رواية إيماجو &#8211; دعاء عبد الرحمن</a></h2>
+		
+						<p class="post-excerpt">بين دفتي هذا الكتاب قصة حقيقية، برغم غرابتها الشديدة وأحداثها الصادمة ومفارقاتها الغير مألوفة إلا أنها واقعية تماما، أبطالها لايزالون&hellip;</p>
+					</div>
+</li>
+
+					</ul><!-- #posts-container /-->
+					<div class="clearfix"></div>
+				</div><!-- .mag-box-container /-->
+			</div><!-- .container-wrapper /-->
+		</div><!-- .mag-box /-->
+	<div class="pages-nav"><ul class="pages-numbers">
+<li class="current"><span class="pages-nav-item">1</span></li><li><a class="pages-nav-item" href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/page/2/" title="2">2</a></li><li><a class="pages-nav-item" href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/page/3/" title="3">3</a></li><li><a class="pages-nav-item" href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/page/4/" title="4">4</a></li><li class="the-next-page"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/page/2/" >&raquo;</a></li></ul></div>
+
+	</div><!-- .main-content /-->
+
+
+	<aside class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky" aria-label="القائمة الجانبية الرئيسية">
+		<div class="theiaStickySidebar">
+			<div id="nav_menu-2" class="container-wrapper widget widget_nav_menu"><div class="widget-title the-global-title has-block-head-4"><div class="the-subtitle">سلاسل وأعمال كاملة<span class="widget-title-icon tie-icon"></span></div></div><div class="menu-%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%88%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9-container"><ul id="menu-%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%88%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9" class="menu"><li id="menu-item-98203" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98203"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d9%85%d8%a7-%d9%88%d8%b1%d8%a7%d8%a1-%d8%a7%d9%84%d8%b7%d8%a8%d9%8a%d8%b9%d8%a9/">سلسلة ما وراء الطبيعة</a></li>
+<li id="menu-item-98204" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98204"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d9%86%d8%aa%d8%a7%d8%b2%d9%8a%d8%a7-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة فانتازيا &#8211; أحمد خالد توفيق</a></li>
+<li id="menu-item-98205" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98205"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d8%a7%d9%81%d8%a7%d8%b1%d9%8a-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة سافاري &#8211; أحمد خالد توفيق</a></li>
+<li id="menu-item-98206" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98206"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b1%d8%ac%d9%84-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ad%d9%8a%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة رجل المستحيل &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98207" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98207"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%b9%d8%af%d8%a7%d8%af-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة الأعداد الخاصة &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98208" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98208"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%84%d9%81-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة ملف المستقبل &#8211; نبيل فاروق</a></li>
+<li id="menu-item-99536" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99536"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%b9%d9%82%d8%b1%d8%a8-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة العقرب &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98209" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98209"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%83%d9%88%d9%83%d8%aa%d9%8a%d9%84-2000-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة كوكتيل 2000 &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98210" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98210"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d8%b1%d8%b3-%d8%a7%d9%84%d8%a3%d9%86%d8%af%d9%84%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة فارس الأندلس &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98211" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98211"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d9%8a%d9%81-%d8%a7%d9%84%d8%b9%d8%af%d8%a7%d9%84%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة سيف العدالة &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98212" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98212"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ad%d8%b1%d8%a8-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b3%d9%8a%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة حرب الجواسيس &#8211; نبيل فاروق</a></li>
+<li id="menu-item-98213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98213"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b2%d9%88%d9%88%d9%85-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة زووم &#8211; نبيل فاروق</a></li>
+<li id="menu-item-108897" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108897"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%84%d8%ad%d9%85%d8%a9-%d8%a7%d9%84%d8%a8%d8%ad%d9%88%d8%b1-%d8%a7%d9%84%d8%b3%d8%a8%d8%b9%d8%a9/">سلسلة ملحمة البحور السبعة</a></li>
+<li id="menu-item-108907" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108907"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a8%d8%b3%d8%a7%d8%aa%d9%8a%d9%86-%d8%b9%d8%b1%d8%a8%d8%b3%d8%aa%d8%a7%d9%86/">سلسلة بساتين عربستان</a></li>
+<li id="menu-item-108916" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108916"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ae%d9%88%d9%81-%d8%a3%d8%b3%d8%a7%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d9%85/">سلسلة خوف &#8211; أسامة المسلم</a></li>
+<li id="menu-item-108922" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108922"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b5%d8%ae%d8%a8-%d8%a7%d9%84%d8%ae%d8%b3%d9%8a%d9%81-%d8%a3%d8%b3%d8%a7%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d9%85/">سلسلة صخب الخسيف &#8211; أسامة المسلم</a></li>
+<li id="menu-item-99605" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99605"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a8%d9%88%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%ac%d8%ad%d9%8a%d9%85/">سلسلة بوابات الجحيم</a></li>
+<li id="menu-item-99518" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99518"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%84%d8%a7%d8%b4%d9%8a%d9%86-%d8%b4%d9%8a%d8%b1%d9%8a%d9%86-%d9%87%d9%86%d8%a7%d8%a6%d9%8a/">سلسلة لاشين &#8211; شيرين هنائي</a></li>
+<li id="menu-item-99500" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99500"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%86%d8%a7%d8%af%d8%b1-%d9%81%d9%88%d8%af%d9%87-%d8%a3%d8%ad%d9%85%d8%af-%d9%8a%d9%88%d9%86%d8%b3/">سلسلة نادر فوده &#8211; أحمد يونس</a></li>
+<li id="menu-item-99535" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99535"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ae%d8%a8%d8%a7%d9%8a%d8%a7-%d8%a3%d8%ad%d9%85%d8%af-%d9%8a%d9%88%d9%86%d8%b3/">سلسلة خبايا &#8211; أحمد يونس</a></li>
+<li id="menu-item-98214" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98214"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%86%d9%88%d8%a7%d8%af%d8%b1-%d8%ac%d8%ad%d8%a7-%d9%84%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84/">سلسلة نوادر جحا للأطفال</a></li>
+<li id="menu-item-98215" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98215"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b5%d8%b1%d8%ae%d8%a9-%d8%a7%d9%84%d8%b1%d8%b9%d8%a8-%d8%b1-%d9%84-%d8%b4%d8%aa%d8%a7%d9%8a%d9%86/">سلسلة صرخة الرعب &#8211; ر. ل. شتاين</a></li>
+<li id="menu-item-108779" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108779"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%aa%d8%a7%d9%83%d8%b3%d9%8a-%d8%ad%d8%b3%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d8%a8%d9%8a/">سلسلة تاكسي &#8211; حسن الحلبي</a></li>
+<li id="menu-item-112213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-112213"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%8a%d8%aa%d8%a7%d9%81%d9%8a%d8%b2%d9%8a%d9%82%d8%a7-%d8%a3%d8%ad%d9%85%d8%af-%d9%81%d9%83%d8%b1%d9%8a/">سلسلة ميتافيزيقا &#8211; أحمد فكري</a></li>
+<li id="menu-item-98216" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98216"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%82%d8%af%d9%85%d8%a7%d8%aa-%d9%82%d8%b5%d9%8a%d8%b1%d8%a9-%d8%ac%d8%af%d9%91%d9%8b%d8%a7/">سلسلة مقدمات قصيرة جدًّا</a></li>
+<li id="menu-item-98217" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98217"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a3%d9%82%d8%af%d9%85-%d9%84%d9%83/">سلسلة أقدم لك</a></li>
+<li id="menu-item-98218" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98218"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b9%d9%82%d9%88%d9%84-%d8%b9%d8%b8%d9%8a%d9%85%d8%a9/">سلسلة عقول عظيمة</a></li>
+<li id="menu-item-98219" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98219"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%af%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%b4%d8%a6%d9%8a%d9%86/">الأدب العالمي للناشئين</a></li>
+<li id="menu-item-98220" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98220"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85/">روايات تاريخ الإسلام</a></li>
+<li id="menu-item-98221" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98221"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1%d8%a8%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%b5%d9%88%d8%b1%d8%a9-%d8%b7%d8%a7%d8%b1%d9%82-%d8%a7%d9%84%d8%b3/">سلسلة الأئمة الأربعة المصورة &#8211; طارق السويدان</a></li>
+<li id="menu-item-108882" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108882"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a3%d8%ba%d9%86%d9%8a%d8%a9-%d8%a7%d9%84%d8%ac%d9%84%d9%8a%d8%af-%d9%88%d8%a7%d9%84%d9%86%d8%a7%d8%b1/">سلسلة أغنية الجليد والنار</a></li>
+<li id="menu-item-109183" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-109183"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%82%d8%a8%d8%b1%d8%a9-%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d9%85%d9%86%d8%b3%d9%8a%d8%a9-%d9%83%d8%a7%d8%b1%d9%84%d9%88%d8%b3-%d8%b2%d8%a7%d9%81%d9%88/">سلسلة مقبرة الكتب المنسية &#8211; كارلوس زافون</a></li>
+<li id="menu-item-98222" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98222"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%87%d8%a7%d8%b1%d9%89-%d8%a8%d9%88%d8%aa%d8%b1/">سلسلة هارى بوتر</a></li>
+<li id="menu-item-98223" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98223"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%b4%d9%81%d9%82-twilight/">سلسلة الشفق (twilight)</a></li>
+<li id="menu-item-98224" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98224"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d8%ba%d8%a7%d9%85%d8%b1%d8%a7%d8%aa-%d8%b4%d9%8a%d8%b1%d9%84%d9%88%d9%83-%d9%87%d9%88%d9%84%d9%85%d8%b2/">سلسلة مغامرات شيرلوك هولمز</a></li>
+<li id="menu-item-98225" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98225"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%85%d9%84%d9%83%d8%a9-%d8%a7%d9%84%d8%ae%d9%88%d8%a7%d8%aa%d9%85/">سلسلة سيد الخواتم (The Lord of the Rings)</a></li>
+<li id="menu-item-108872" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108872"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b2%d9%8a%d8%b2%d8%a7-%d8%ac%d9%88%d8%b2%d9%8a%d9%87-%d9%85%d8%a7%d9%88%d8%b1%d9%88/">‫سلسلة زيزا &#8211; جوزيه ماورو</a></li>
+<li id="menu-item-108932" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-108932"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a2%d9%86-%d9%81%d9%8a-%d8%a7%d9%84%d9%85%d8%b1%d8%aa%d9%81%d8%b9%d8%a7%d8%aa-%d8%a7%d9%84%d8%ae%d8%b6%d8%b1%d8%a7%d8%a1/">سلسلة آن في المرتفعات الخضراء</a></li>
+<li id="menu-item-98227" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-98227"><a href="https://8ghrb.com/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%ab%d9%82%d8%a7%d9%81%d8%a7%d8%aa-%d8%a7%d9%84%d8%b4%d8%b9%d9%88%d8%a8-72-%d9%83%d8%aa%d8%a7%d8%a8/">سلسلة من ثقافات الشعوب (72 كتاب)</a></li>
+<li id="menu-item-98228" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98228"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ab%d9%85%d8%b1%d8%a7%d8%aa-%d9%85%d9%86-%d8%af%d9%88%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%81%d8%a9/">سلسلة ثمرات من دوحة المعرفة</a></li>
+<li id="menu-item-98229" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98229"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%b9%d8%ac%d8%a7%d8%a6%d8%a8-%d8%a7%d9%84%d8%ae%d9%84%d9%82/">سلسلة من عجائب الخلق</a></li>
+<li id="menu-item-98230" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98230"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%86%d8%ac%d9%8a%d8%a8-%d9%85%d8%ad%d9%81%d9%88%d8%b8/">الأعمال الكاملة لنجيب محفوظ</a></li>
+<li id="menu-item-98231" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98231"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%af%d9%88%d8%b3%d8%aa%d9%88%d9%8a%d9%81%d8%b3%d9%83%d9%8a-18-%d9%85%d8%ac%d9%84%d8%af/">الأعمال الكاملة لدوستويفسكي (18 مجلد)</a></li>
+<li id="menu-item-98232" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98232"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%81%d8%b1%d8%a7%d9%86%d8%b2-%d9%83%d8%a7%d9%81%d9%83%d8%a7/">الأعمال الكاملة لفرانز كافكا</a></li>
+<li id="menu-item-98233" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98233"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%a3%d9%86%d8%b7%d9%88%d9%86-%d8%aa%d8%b4%d9%8a%d8%ae%d9%88%d9%81/">الأعمال الكاملة لأنطون تشيخوف</a></li>
+<li id="menu-item-98235" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-98235"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%ba%d8%b3%d8%a7%d9%86-%d9%83%d9%86%d9%81%d8%a7%d9%86%d9%8a/">الأعمال الكاملة لغسان كنفاني</a></li>
+</ul></div><div class="clearfix"></div></div><!-- .widget /-->		</div><!-- .theiaStickySidebar /-->
+	</aside><!-- .sidebar /-->
+	</div><!-- .main-content-row /--></div><!-- #content /-->
+<footer id="footer" class="site-footer dark-skin dark-widgetized-area">
+
+	
+			<div id="site-info" class="site-info">
+				<div class="container">
+					<div class="tie-row">
+						<div class="tie-col-md-12">
+
+							<div class="footer-menu"><ul id="menu-%d8%a3%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d9%87%d9%8a%d8%af%d8%b1" class="menu"><li id="menu-item-60098" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60098"><a href="https://8ghrb.com/contact-us/">إتصل بنا</a></li>
+<li id="menu-item-45026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45026"><a href="https://8ghrb.com/%d8%a3%d9%86%d8%b4%d8%b1-%d9%85%d8%b9%d9%86%d8%a7/">أنشر معنا</a></li>
+<li id="menu-item-98595" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98595"><a href="https://8ghrb.com/privacy-policy/">privacy policy</a></li>
+<li id="menu-item-98594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-98594"><a href="https://8ghrb.com/terms-of-service/">Terms of service</a></li>
+</ul></div>
+						</div><!-- .tie-col /-->
+					</div><!-- .tie-row /-->
+				</div><!-- .container /-->
+			</div><!-- #site-info /-->
+			
+</footer><!-- #footer /-->
+
+
+		<a id="go-to-top" class="go-to-top-button" href="#go-to-tie-body">
+			<span class="tie-icon-angle-up"></span>
+			<span class="screen-reader-text">زر الذهاب إلى الأعلى</span>
+		</a>
+	
+		</div><!-- #tie-wrapper /-->
+
+		
+	<aside class=" side-aside normal-side dark-skin dark-widgetized-area is-fullwidth appear-from-left" aria-label="القائمة الجانبية الثانوية" style="visibility: hidden;">
+		<div data-height="100%" class="side-aside-wrapper has-custom-scroll">
+
+			<a href="#" class="close-side-aside remove big-btn">
+				<span class="screen-reader-text">إغلاق</span>
+			</a><!-- .close-side-aside /-->
+
+
+			
+				<div id="mobile-container">
+
+					
+					<div id="mobile-menu" class="hide-menu-icons has-custom-menu">
+						<div class="menu-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3%d9%8a%d8%a9-container"><ul id="mobile-custom-menu" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-59834"><a href="https://8ghrb.com">الرئيسية</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-10"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/">الأدب العربي</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">روايات عربية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1120"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%83%d8%aa%d8%a8-%d8%a3%d8%af%d8%a8%d9%8a%d8%a9/">كتب أدبية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5087"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%82%d8%b5%d8%b5-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">قصص عربية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1118"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%a7%d9%84%d8%a3%d8%af%d8%a8-%d8%a7%d9%84%d8%b3%d8%a7%d8%ae%d8%b1/">الأدب الساخر</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1119"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d8%af%d9%88%d8%a7%d9%88%d9%8a%d9%86-%d8%a7%d9%84%d8%b4%d8%b9%d8%b1-%d9%88%d8%a7%d9%84%d9%81%d9%86%d9%88%d9%86/">دواوين الشعر والفنون</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1121"><a href="https://8ghrb.com/category/%d8%a7%d8%af%d8%a8-%d8%b9%d8%b1%d8%a8%d9%8a/%d9%85%d8%b3%d8%b1%d8%ad%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a%d8%a9/">مسرحيات عربية</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1113"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/">أدب عالمى مترجم</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1115"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الروايات العالمية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1116"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الكتب العالمية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19267"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%82%d8%b5%d8%b5-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">القصص العالمية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1117"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%85%d8%b1%d8%ad%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">المسرحيات العالمية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19269"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%a3%d8%af%d8%a8%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الكتب الأدبية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1114"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%a7%d9%84%d8%af%d9%88%d8%a7%d9%88%d9%8a%d9%86-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%b1%d8%ac%d9%85%d8%a9/">الدواوين العالمية المترجمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47952"><a href="https://8ghrb.com/category/%d8%a3%d8%af%d8%a8-%d8%b9%d8%a7%d9%84%d9%85%d9%89-%d9%85%d8%aa%d8%b1%d8%ac%d9%85/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%b9%d8%b1%d8%a8%d9%8a-%d8%a7%d9%86%d8%ac%d9%84%d9%8a%d8%b2%d9%8a/">روايات (عربي &#8211; انجليزي)</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-58952"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/">علوم الإنسان والحياة</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%af%d9%8a%d9%86%d9%8a%d8%a9/">كتب دينية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%aa%d9%86%d9%85%d9%8a%d8%a9-%d8%a8%d8%b4%d8%b1%d9%8a%d8%a9/">تنمية بشرية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13450"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b9%d9%84%d9%85-%d9%86%d9%81%d8%b3-%d9%88%d8%a5%d8%ac%d8%aa%d9%85%d8%a7%d8%b9/">كتب علم النفس والإجتماع</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4002"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%81%d9%84%d8%b3%d9%81%d8%a9-%d9%88%d9%85%d9%86%d8%b7%d9%82/">كتب الفلسفة والمنطق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19516"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%81%d9%83%d8%b1-%d9%88%d8%a5%d9%8a%d8%af%d9%8a%d9%88%d9%84%d9%88%d8%ac%d9%8a%d8%a7/">فكر وثقافة وإيديولوجيا</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13693"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%a5%d8%af%d8%a7%d8%b1%d8%a9-%d8%a3%d8%b9%d9%85%d8%a7%d9%84/">كتب إدارة أعمال</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19505"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae/">كتب تاريخ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4134"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d8%b3%d9%8a%d8%b1-%d9%88%d8%aa%d8%b1%d8%a7%d8%ac%d9%85-%d9%88%d9%85%d8%b0%d9%83%d8%b1%d8%a7%d8%aa/">كتب السير والتراجم والمذكرات</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4631"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b9%d9%84%d9%85%d9%8a%d8%a9/">كتب علمية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4630"><a href="https://8ghrb.com/category/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/%d9%83%d8%aa%d8%a8-%d8%b7%d8%a8%d9%8a%d8%a9/">كتب طبية</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4003"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/">تصنيفات أخرى</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4250"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%b3%d9%8a%d8%a7%d8%b3%d9%8a%d8%a9/">كتب سياسية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2184"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a3%d8%b7%d9%81%d8%a7%d9%84/">كتب أطفال</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14597"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%a8%d9%84%d8%a7%d8%af-%d9%88%d8%aa%d8%b1%d8%ad%d8%a7%d9%84/">أدب الرحلات والترحال</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19702"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d9%86%d9%82%d8%af-%d8%a7%d9%84%d8%a3%d8%af%d8%a8%d9%8a/">كتب النقد الأدبي</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29685"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%b9%d9%84%d9%85-%d8%a7%d9%84%d9%81%d9%84%d9%83-%d9%88%d8%a7%d9%84%d9%83%d9%88%d9%86%d9%8a%d8%a7%d8%aa/">علم الفلك والكونيات</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29872"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%a5%d9%82%d8%aa%d8%b5%d8%a7%d8%af/">كتب الإقتصاد</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7482"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%aa%d8%b9%d9%84%d9%8a%d9%85-%d9%84%d8%ba%d8%a7%d8%aa/">كتب تعليم لغات</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19504"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%ad%d9%8a%d9%88%d8%a7%d9%86/">علوم الحيوان</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4251"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d8%ab%d9%82%d8%a7%d9%81%d8%a9-%d8%ac%d9%86%d8%b3%d9%8a%d8%a9/">كتب ثقافة جنسية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%83%d8%aa%d8%a8-%d9%85%d9%86%d9%88%d8%b9%d8%a9/">كتب منوعة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7390"><a href="https://8ghrb.com/category/%d8%aa%d8%b5%d9%86%d9%8a%d9%81%d8%a7%d8%aa/%d9%82%d8%b1%d9%8a%d8%a8%d8%a7/">قريبا</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-58837"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/">سلاسل وأعمال كاملة</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58838"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d9%85%d8%a7-%d9%88%d8%b1%d8%a7%d8%a1-%d8%a7%d9%84%d8%b7%d8%a8%d9%8a%d8%b9%d8%a9/">سلسلة ما وراء الطبيعة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58839"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d9%86%d8%aa%d8%a7%d8%b2%d9%8a%d8%a7-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة فانتازيا &#8211; أحمد خالد توفيق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58840"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d8%a7%d9%81%d8%a7%d8%b1%d9%8a-%d8%a3%d8%ad%d9%85%d8%af-%d8%ae%d8%a7%d9%84%d8%af-%d8%aa%d9%88%d9%81%d9%8a%d9%82/">سلسلة سافاري &#8211; أحمد خالد توفيق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58841"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b1%d8%ac%d9%84-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ad%d9%8a%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة رجل المستحيل &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58842"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%b9%d8%af%d8%a7%d8%af-%d8%a7%d9%84%d8%ae%d8%a7%d8%b5%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة الأعداد الخاصة &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58843"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%84%d9%81-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة ملف المستقبل &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58844"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%83%d9%88%d9%83%d8%aa%d9%8a%d9%84-2000-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة كوكتيل 2000 &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58845"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%81%d8%a7%d8%b1%d8%b3-%d8%a7%d9%84%d8%a3%d9%86%d8%af%d9%84%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة فارس الأندلس &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58846"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b3%d9%8a%d9%81-%d8%a7%d9%84%d8%b9%d8%af%d8%a7%d9%84%d8%a9-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة سيف العدالة &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60441"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ad%d8%b1%d8%a8-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b3%d9%8a%d8%b3-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة حرب الجواسيس &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58847"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b2%d9%88%d9%88%d9%85-%d9%86%d8%a8%d9%8a%d9%84-%d9%81%d8%a7%d8%b1%d9%88%d9%82/">سلسلة زووم &#8211; نبيل فاروق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60519"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%86%d9%88%d8%a7%d8%af%d8%b1-%d8%ac%d8%ad%d8%a7-%d9%84%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84/">سلسلة نوادر جحا للأطفال</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58848"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b5%d8%b1%d8%ae%d8%a9-%d8%a7%d9%84%d8%b1%d8%b9%d8%a8-%d8%b1-%d9%84-%d8%b4%d8%aa%d8%a7%d9%8a%d9%86/">سلسلة صرخة الرعب &#8211; ر. ل. شتاين</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58849"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%82%d8%af%d9%85%d8%a7%d8%aa-%d9%82%d8%b5%d9%8a%d8%b1%d8%a9-%d8%ac%d8%af%d9%91%d9%8b%d8%a7/">سلسلة مقدمات قصيرة جدًّا</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58850"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a3%d9%82%d8%af%d9%85-%d9%84%d9%83/">سلسلة أقدم لك</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63997"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%b9%d9%82%d9%88%d9%84-%d8%b9%d8%b8%d9%8a%d9%85%d8%a9/">سلسلة عقول عظيمة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58851"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%af%d8%a8-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%b4%d8%a6%d9%8a%d9%86/">الأدب العالمي للناشئين</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58852"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b1%d9%88%d8%a7%d9%8a%d8%a7%d8%aa-%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85/">روايات تاريخ الإسلام</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61131"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d8%a6%d9%85%d8%a9-%d8%a7%d9%84%d8%a3%d8%b1%d8%a8%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%b5%d9%88%d8%b1%d8%a9-%d8%b7%d8%a7%d8%b1%d9%82-%d8%a7%d9%84%d8%b3/">سلسلة الأئمة الأربعة المصورة &#8211; طارق السويدان</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58853"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%87%d8%a7%d8%b1%d9%89-%d8%a8%d9%88%d8%aa%d8%b1/">سلسلة هارى بوتر</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58854"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%a7%d9%84%d8%b4%d9%81%d9%82-twilight/">سلسلة الشفق (twilight)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58855"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d8%ba%d8%a7%d9%85%d8%b1%d8%a7%d8%aa-%d8%b4%d9%8a%d8%b1%d9%84%d9%88%d9%83-%d9%87%d9%88%d9%84%d9%85%d8%b2/">سلسلة مغامرات شيرلوك هولمز</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58856"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%85%d9%84%d9%83%d8%a9-%d8%a7%d9%84%d8%ae%d9%88%d8%a7%d8%aa%d9%85/">سلسلة سيد الخواتم (The Lord of the Rings)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-58857"><a href="https://8ghrb.com/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%ab%d9%82%d8%a7%d9%81%d8%a7%d8%aa-%d8%a7%d9%84%d8%b4%d8%b9%d9%88%d8%a8-72-%d9%83%d8%aa%d8%a7%d8%a8/">سلسلة من ثقافات الشعوب (72 كتاب)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58858"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d8%ab%d9%85%d8%b1%d8%a7%d8%aa-%d9%85%d9%86-%d8%af%d9%88%d8%ad%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%81%d8%a9/">سلسلة ثمرات من دوحة المعرفة</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58859"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%b3%d9%84%d8%b3%d9%84%d8%a9-%d9%85%d9%86-%d8%b9%d8%ac%d8%a7%d8%a6%d8%a8-%d8%a7%d9%84%d8%ae%d9%84%d9%82/">سلسلة من عجائب الخلق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58860"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%86%d8%ac%d9%8a%d8%a8-%d9%85%d8%ad%d9%81%d9%88%d8%b8/">الأعمال الكاملة لنجيب محفوظ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58861"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%af%d9%88%d8%b3%d8%aa%d9%88%d9%8a%d9%81%d8%b3%d9%83%d9%8a-18-%d9%85%d8%ac%d9%84%d8%af/">الأعمال الكاملة لدوستويفسكي (18 مجلد)</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58862"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d9%81%d8%b1%d8%a7%d9%86%d8%b2-%d9%83%d8%a7%d9%81%d9%83%d8%a7/">الأعمال الكاملة لفرانز كافكا</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58863"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%a3%d9%86%d8%b7%d9%88%d9%86-%d8%aa%d8%b4%d9%8a%d8%ae%d9%88%d9%81/">الأعمال الكاملة لأنطون تشيخوف</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58864"><a href="https://8ghrb.com/category/%d8%b3%d9%84%d8%a7%d8%b3%d9%84-%d9%83%d8%a7%d9%85%d9%84%d8%a9/%d8%a7%d9%84%d8%a3%d8%b9%d9%85%d8%a7%d9%84-%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84%d8%a9-%d9%84%d8%ba%d8%b3%d8%a7%d9%86-%d9%83%d9%86%d9%81%d8%a7%d9%86%d9%8a/">الأعمال الكاملة لغسان كنفاني</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-menu-ancestor current-menu-parent current-category-parent menu-item-has-children menu-item-19503 tie-current-menu"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/">تجميعات 8 غرب</a>
+<ul class="sub-menu menu-sub-content">
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-25000"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d9%88%d9%85%d8%a7%d9%86%d8%b3%d9%8a%d8%a9/">أفضل 100 رواية رومانسية</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27493"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d8%b1%d9%88%d8%a7%d9%8a%d8%a9-%d8%b1%d8%b9%d8%a8-%d9%88%d8%aa%d8%b4%d9%88%d9%8a%d9%82/">أفضل 100 رواية رعب وتشويق</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14269"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a3%d9%81%d8%b6%d9%84-100-%d9%83%d8%aa%d8%a7%d8%a8-%d9%81%d9%89-%d8%a7%d9%84%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae/">أفضل 100 كتاب فى التاريخ</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14074"><a href="https://8ghrb.com/category/%d8%aa%d8%ac%d9%85%d9%8a%d8%b9%d8%a7%d8%aa/%d8%a7%d9%84%d9%83%d8%aa%d8%a8-%d8%a7%d9%84%d8%ad%d8%a7%d8%b5%d9%84%d8%a9-%d8%b9%d9%84%d9%89-%d8%ac%d8%a7%d8%a6%d8%b2%d8%a9-%d9%86%d9%88%d8%a8%d9%84/">الكتب الحاصلة على جائزة نوبل</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5839"><a href="https://8ghrb.com/%d8%a7%d9%84%d9%85%d8%a4%d9%84%d9%81%d9%88%d9%86/">المؤلفون</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20463"><a href="https://8ghrb.com/%d8%ad%d9%82%d9%88%d9%82-%d8%a7%d9%84%d9%85%d9%84%d9%83%d9%8a%d8%a9/">حقوق كتاب</a></li>
+</ul></div>					</div><!-- #mobile-menu /-->
+
+											<div id="mobile-social-icons" class="social-icons-widget solid-social-icons">
+							<ul><li class="social-icons-item"><a class="social-link facebook-social-icon" rel="external noopener nofollow" target="_blank" href="https://www.facebook.com/8ghaarb"><span class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a></li></ul> 
+						</div><!-- #mobile-social-icons /-->
+						
+				</div><!-- #mobile-container /-->
+			
+
+			
+		</div><!-- .side-aside-wrapper /-->
+	</aside><!-- .side-aside /-->
+
+	
+	</div><!-- #tie-container /-->
+</div><!-- .background-overlay /-->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/jannah\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<div id="autocomplete-suggestions" class="autocomplete-suggestions"></div><div id="is-scroller-outer"><div id="is-scroller"></div></div><div id="fb-root"></div>		<div id="tie-popup-search-desktop" class="tie-popup tie-popup-search-wrap" style="display: none;">
+			<a href="#" class="tie-btn-close remove big-btn light-btn">
+				<span class="screen-reader-text">إغلاق</span>
+			</a>
+			<div class="popup-search-wrap-inner">
+
+				<div class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="بحث">
+
+										<form method="get" class="tie-popup-search-form" action="https://8ghrb.com/">
+							<input class="tie-popup-search-input is-ajax-search" inputmode="search" type="text" name="s" title="ابحث عن كتاب" autocomplete="off" placeholder="ابحث عن كتاب" />
+							<button class="tie-popup-search-submit" type="submit">
+								<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+								<span class="screen-reader-text">ابحث عن كتاب</span>
+							</button>
+						</form>
+						
+				</div><!-- .pop-up-live-search /-->
+
+			</div><!-- .popup-search-wrap-inner /-->
+		</div><!-- .tie-popup-search-wrap /-->
+				<div id="tie-popup-search-mobile" class="tie-popup tie-popup-search-wrap" style="display: none;">
+			<a href="#" class="tie-btn-close remove big-btn light-btn">
+				<span class="screen-reader-text">إغلاق</span>
+			</a>
+			<div class="popup-search-wrap-inner">
+
+				<div class="live-search-parent pop-up-live-search" data-skin="live-search-popup" aria-label="بحث">
+
+										<form method="get" class="tie-popup-search-form" action="https://8ghrb.com/">
+							<input class="tie-popup-search-input is-ajax-search" inputmode="search" type="text" name="s" title="ابحث عن كتاب" autocomplete="off" placeholder="ابحث عن كتاب" />
+							<button class="tie-popup-search-submit" type="submit">
+								<span class="tie-icon-search tie-search-icon" aria-hidden="true"></span>
+								<span class="screen-reader-text">ابحث عن كتاب</span>
+							</button>
+						</form>
+						
+				</div><!-- .pop-up-live-search /-->
+
+			</div><!-- .popup-search-wrap-inner /-->
+		</div><!-- .tie-popup-search-wrap /-->
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'rtl' ] } );
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1778972594" id="swv-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/8ghrb.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1778972594" id="contact-form-7-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="5dded5602e2c0d386544116c-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/8ghrb.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="5dded5602e2c0d386544116c-text/javascript" id="tie-scripts-js-extra">
+/* <![CDATA[ */
+var tie = {"is_rtl":"1","ajaxurl":"https:\/\/8ghrb.com\/wp-admin\/admin-ajax.php","is_side_aside_light":"","is_taqyeem_active":"","is_sticky_video":"","mobile_menu_top":"","mobile_menu_active":"area_1","mobile_menu_parent":"","lightbox_all":"true","lightbox_gallery":"true","lightbox_skin":"dark","lightbox_thumb":"horizontal","lightbox_arrows":"true","is_singular":"","autoload_posts":"","reading_indicator":"","lazyload":"","select_share":"","select_share_twitter":"true","select_share_facebook":"true","select_share_linkedin":"true","select_share_email":"","facebook_app_id":"5303202981","twitter_username":"","responsive_tables":"true","ad_blocker_detector":"","sticky_behavior":"default","sticky_desktop":"true","sticky_mobile":"true","sticky_mobile_behavior":"default","ajax_loader":"<div class=\"loader-overlay\"><div class=\"spinner-circle\"><\/div><\/div>","type_to_search":"","lang_no_results":"\u0644\u0645 \u064a\u062a\u0645 \u0627\u0644\u0639\u062b\u0648\u0631 \u0639\u0644\u0649 \u0627\u0644\u0643\u062a\u0627\u0628","sticky_share_mobile":"","sticky_share_post":"","sticky_share_post_menu":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/themes/jannah/assets/js/scripts.min.js?ver=7.6.3" id="tie-scripts-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/cache/min/1/wp-content/themes/jannah/assets/ilightbox/lightbox.js?ver=1778972594" id="tie-js-ilightbox-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/themes/jannah/assets/js/desktop.min.js?ver=7.6.3" id="tie-js-desktop-js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://8ghrb.com/wp-content/cache/min/1/wp-content/themes/jannah/assets/js/live-search.js?ver=1778972594" id="tie-js-livesearch-js"></script>
+<script type="rocketlazyloadscript">
+				var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+				if ( typeof connection != 'undefined' && (/\slow-2g|2g/.test(connection.effectiveType))) {
+					console.warn( 'Slow Connection Google Fonts Disabled' );
+				}
+				else{
+					
+				WebFontConfig ={
+					google:{
+						families: [ 'Changa::latin', 'Questrial:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,800,800italic,900,900italic:latin&display=swap' ]
+					}
+				};
+
+				(function(){
+					var wf   = document.createElement('script');
+					wf.src   = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+					wf.type  = 'text/javascript';
+					wf.defer = 'true';
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(wf, s);
+				})();
+			
+				}
+			</script>		<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+			!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+		</script>
+
+		<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+			var c = document.body.className;
+			c = c.replace(/tie-no-js/, 'tie-js');
+			document.body.className = c;
+		</script>
+		
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://8ghrb.com/wp-content/cache/min/1/eaab20d6da522924947f3a9caf8696cd.css" media="all" data-minify="1" /></noscript><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="5dded5602e2c0d386544116c-|49" defer></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1779971800 -->
